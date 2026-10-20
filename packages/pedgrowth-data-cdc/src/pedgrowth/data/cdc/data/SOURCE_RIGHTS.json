@@ -1,0 +1,60 @@
+{
+  "code_license_scope": "MIT applies to the independently authored Python implementation only; CDC reference datasets are not relicensed under MIT.",
+  "data_attribution": "Source: U.S. Centers for Disease Control and Prevention (CDC). Original materials available free at cdc.gov.",
+  "distribution_strategy": "Code-only: fetch official CDC CSVs on demand, validate source SHA-256, normalize without substantive changes, validate and cache LMSB.",
+  "expected_reference_count": 9,
+  "installed_by_default": false,
+  "license_expression": null,
+  "non_endorsement": "Not endorsed by CDC, HHS, or the United States Government.",
+  "official_reference_pages": [
+    {
+      "label": "CDC 2000 Growth Charts: LMS data files",
+      "url": "https://www.cdc.gov/growthcharts/cdc-data-files.htm"
+    },
+    {
+      "label": "CDC 2022 Extended BMI-for-Age: LMS and sigma source data and equations",
+      "url": "https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm"
+    }
+  ],
+  "packaging_code_license_expression": "MIT",
+  "pending_clearance_details": "Original CDC authored public-domain data; verify no third-party rights and jurisdictional complications before public listing.",
+  "provider": "US Centers for Disease Control and Prevention",
+  "r_package": {
+    "copyright_holder": "David Freedman and contributors (as declared in R package DESCRIPTION)",
+    "declared_license": "GPL-3",
+    "name": "cdcanthro",
+    "package_source_archive_url": "https://cran.r-project.org/src/contrib/cdcanthro_0.4.0.tar.gz",
+    "package_url": "https://cran.r-project.org/package=cdcanthro",
+    "source_code_url": "https://cran.r-project.org/src/contrib/cdcanthro_0.4.0.tar.gz",
+    "spdx_license_expression": "GPL-3.0-only",
+    "version": "0.4.0"
+  },
+  "r_package_usage_and_packaging_basis": "The GPL-3 cdcanthro R package provides a separate reference implementation of CDC/WHO standardized metrics and related tables for independent numerical validation. CDC original downloads govern the exact packed LMS values, and the Python dataset conversion and packaging code is independently authored.",
+  "r_program_license_is_data_redistribution_grant": false,
+  "redistribution_in_mit_core": false,
+  "rights_evidence_sources": [
+    "https://www.cdc.gov/other/agencymaterials.html",
+    "https://www.cdc.gov/growthcharts/cdc-data-files.htm",
+    "https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm"
+  ],
+  "rights_status": "generally_us_federal_public_domain_subject_to_third_party_and_jurisdiction_exceptions",
+  "scientific_values_origin": "The values are derived from original CDC 2000 LMS downloads and the CDC 2022 extended BMI LMS/sigma file, with separately implemented CDC calculation methods. The cdcanthro R package provides a GPL-3 computation and some packaged reference data for independent comparison. The public CDC files, not the GPL R package, are the direct source of the packaged pedgrowth coefficients; no claim is made that the newer CDC 2022 extended BMI dataset comes from cdcanthro.",
+  "source_form_in_data_distribution": false,
+  "standard": "CDC 2000 / 2022",
+  "terms_url": "https://www.cdc.gov/Other/imagereuse.html",
+  "validation": {
+    "fixture_paths": [
+      "tests/fixtures/official_percentiles/",
+      "tests/fixtures/clinical_cases_manifest.json"
+    ],
+    "generation_scripts": [
+      "scripts/refresh_data.py",
+      "scripts/fetch_published_percentiles.py",
+      "scripts/export_cdc_r_challenges.R",
+      "scripts/export_clinical_r_oracles.R"
+    ],
+    "independent_oracle": "Official CDC published percentile tables plus cdcanthro R 0.4.0 computed extended-BMI challenges",
+    "input_origin": "CDC 2000 published LMS datasets, CDC 2022 published extended-BMI LMS/sigma data and published percentiles",
+    "limitations": "The 2022 extended-BMI data are sourced from CDC, not from the cdcanthro R distribution."
+  }
+}

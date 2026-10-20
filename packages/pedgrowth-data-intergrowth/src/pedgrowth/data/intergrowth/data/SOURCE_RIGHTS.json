@@ -1,0 +1,58 @@
+{
+  "expected_reference_count": 1,
+  "installed_by_default": false,
+  "license_expression": null,
+  "official_reference_pages": [
+    {
+      "label": "INTERGROWTH-21st: original standards, charts, and calculators",
+      "url": "https://intergrowth21.tghn.org/standards-tools/"
+    },
+    {
+      "label": "Villar et al. 2015 postnatal growth standards for preterm infants",
+      "url": "https://doi.org/10.1016/S2214-109X(15)00163-1"
+    },
+    {
+      "label": "Villar et al. 2016 very preterm size-at-birth reference",
+      "url": "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    }
+  ],
+  "packaging_code_license_expression": "GPL-3.0-or-later",
+  "pending_clearance_details": "Gigs GPL code and consortium endorsement are documented but source-specific fitted parameter grant has not been verified.",
+  "provider": "INTERGROWTH-21st Consortium",
+  "r_package": {
+    "copyright_holder": "London School of Hygiene & Tropical Medicine (listed in R package DESCRIPTION)",
+    "declared_license": "GPL (>= 3)",
+    "name": "gigs",
+    "package_source_archive_url": "https://github.com/ropensci/gigs/archive/refs/tags/v0.5.2.tar.gz",
+    "package_url": "https://github.com/ropensci/gigs/releases/tag/v0.5.2",
+    "source_code_url": "https://github.com/ropensci/gigs",
+    "spdx_license_expression": "GPL-3.0-or-later",
+    "version": "0.5.2"
+  },
+  "r_package_usage_and_packaging_basis": "The GPL (>= 3) gigs R package contains the evaluated regression expressions used as a precise numerical source and validation oracle. The independent Python calculation model and separate versioned data packaging are informed by the original research articles, INTERGROWTH website, and gigs R implementation.",
+  "r_program_license_is_data_redistribution_grant": false,
+  "redistribution_in_mit_core": false,
+  "rights_evidence_sources": [
+    "https://github.com/ropensci/gigs/releases/tag/v0.5.2",
+    "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "https://intergrowth21.tghn.org/terms/"
+  ],
+  "rights_status": "source_specific_review_required",
+  "scientific_values_origin": "The 43 fitted numerical parameters are transcribed from the published INTERGROWTH-21st regression equations as represented in the independently GPL-licensed gigs R 0.5.2 functions ig_png_mu_sigma and ig_vpns_mu_sigma. The gigs comments cite the 2015 and 2016 original studies and note that certain additional equations were supplied directly by Dr Eric Ohuma. The official INTERGROWTH standards page provides primary scientific context and charts; the independent Python implementation was numerically validated against the R functions.",
+  "source_form_in_data_distribution": true,
+  "standard": "INTERGROWTH preterm and very preterm reference equations",
+  "terms_url": "https://intergrowth21.tghn.org/standards-tools/",
+  "validation": {
+    "fixture_paths": [
+      "tests/fixtures/intergrowth/continuous_manifest.json",
+      "tests/fixtures/intergrowth/manifest.json"
+    ],
+    "generation_scripts": [
+      "scripts/export_intergrowth_gigs_r.R",
+      "scripts/prepare_intergrowth_r_challenges.py"
+    ],
+    "independent_oracle": "Pinned original gigs R 0.5.2 functions and 4,970 continuous computed comparison values",
+    "input_origin": "INTERGROWTH-21st original published regression equations and fitted parameters as reproduced in gigs R 0.5.2",
+    "limitations": "Only four preterm-postnatal and three very-preterm birth models are covered; other INTERGROWTH standards are not implemented."
+  }
+}

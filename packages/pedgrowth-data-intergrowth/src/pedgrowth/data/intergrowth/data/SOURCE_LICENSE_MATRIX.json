@@ -1,0 +1,128 @@
+{
+  "intergrowth_preterm_postnatal_head_circumference": {
+    "family": "intergrowth",
+    "license_review_status": "pending",
+    "official_project_endorsement_url": "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "original_articles": [
+      "https://doi.org/10.1016/S2214-109X(15)00163-1",
+      "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    ],
+    "r_embedded_license": "GPL-3.0-or-later",
+    "r_package": "gigs",
+    "r_package_license_is_not_automatic_external_dataset_license": true,
+    "r_package_version": "0.5.2",
+    "r_source_url": "https://github.com/ropensci/gigs/tree/v0.5.2/R",
+    "rights_gap": "Confirm GPL coverage and contribution rights for the precise 43 fitted parameters; article copyright and software GPL are distinct",
+    "source_form": "intergrowth_coefficients.json",
+    "source_sha256": "fe3d62fd373d567ffe8be804c4fc80a0dad667084d831afc899ba9441b61bb13",
+    "source_url": "https://intergrowth21.tghn.org/standards-tools/"
+  },
+  "intergrowth_preterm_postnatal_length": {
+    "family": "intergrowth",
+    "license_review_status": "pending",
+    "official_project_endorsement_url": "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "original_articles": [
+      "https://doi.org/10.1016/S2214-109X(15)00163-1",
+      "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    ],
+    "r_embedded_license": "GPL-3.0-or-later",
+    "r_package": "gigs",
+    "r_package_license_is_not_automatic_external_dataset_license": true,
+    "r_package_version": "0.5.2",
+    "r_source_url": "https://github.com/ropensci/gigs/tree/v0.5.2/R",
+    "rights_gap": "Confirm GPL coverage and contribution rights for the precise 43 fitted parameters; article copyright and software GPL are distinct",
+    "source_form": "intergrowth_coefficients.json",
+    "source_sha256": "fe3d62fd373d567ffe8be804c4fc80a0dad667084d831afc899ba9441b61bb13",
+    "source_url": "https://intergrowth21.tghn.org/standards-tools/"
+  },
+  "intergrowth_preterm_postnatal_weight": {
+    "family": "intergrowth",
+    "license_review_status": "pending",
+    "official_project_endorsement_url": "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "original_articles": [
+      "https://doi.org/10.1016/S2214-109X(15)00163-1",
+      "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    ],
+    "r_embedded_license": "GPL-3.0-or-later",
+    "r_package": "gigs",
+    "r_package_license_is_not_automatic_external_dataset_license": true,
+    "r_package_version": "0.5.2",
+    "r_source_url": "https://github.com/ropensci/gigs/tree/v0.5.2/R",
+    "rights_gap": "Confirm GPL coverage and contribution rights for the precise 43 fitted parameters; article copyright and software GPL are distinct",
+    "source_form": "intergrowth_coefficients.json",
+    "source_sha256": "fe3d62fd373d567ffe8be804c4fc80a0dad667084d831afc899ba9441b61bb13",
+    "source_url": "https://intergrowth21.tghn.org/standards-tools/"
+  },
+  "intergrowth_preterm_postnatal_weight_for_length": {
+    "family": "intergrowth",
+    "license_review_status": "pending",
+    "official_project_endorsement_url": "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "original_articles": [
+      "https://doi.org/10.1016/S2214-109X(15)00163-1",
+      "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    ],
+    "r_embedded_license": "GPL-3.0-or-later",
+    "r_package": "gigs",
+    "r_package_license_is_not_automatic_external_dataset_license": true,
+    "r_package_version": "0.5.2",
+    "r_source_url": "https://github.com/ropensci/gigs/tree/v0.5.2/R",
+    "rights_gap": "Confirm GPL coverage and contribution rights for the precise 43 fitted parameters; article copyright and software GPL are distinct",
+    "source_form": "intergrowth_coefficients.json",
+    "source_sha256": "fe3d62fd373d567ffe8be804c4fc80a0dad667084d831afc899ba9441b61bb13",
+    "source_url": "https://intergrowth21.tghn.org/standards-tools/"
+  },
+  "intergrowth_very_preterm_birth_head_circumference": {
+    "family": "intergrowth",
+    "license_review_status": "pending",
+    "official_project_endorsement_url": "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "original_articles": [
+      "https://doi.org/10.1016/S2214-109X(15)00163-1",
+      "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    ],
+    "r_embedded_license": "GPL-3.0-or-later",
+    "r_package": "gigs",
+    "r_package_license_is_not_automatic_external_dataset_license": true,
+    "r_package_version": "0.5.2",
+    "r_source_url": "https://github.com/ropensci/gigs/tree/v0.5.2/R",
+    "rights_gap": "Confirm GPL coverage and contribution rights for the precise 43 fitted parameters; article copyright and software GPL are distinct",
+    "source_form": "intergrowth_coefficients.json",
+    "source_sha256": "fe3d62fd373d567ffe8be804c4fc80a0dad667084d831afc899ba9441b61bb13",
+    "source_url": "https://intergrowth21.tghn.org/standards-tools/"
+  },
+  "intergrowth_very_preterm_birth_length": {
+    "family": "intergrowth",
+    "license_review_status": "pending",
+    "official_project_endorsement_url": "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "original_articles": [
+      "https://doi.org/10.1016/S2214-109X(15)00163-1",
+      "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    ],
+    "r_embedded_license": "GPL-3.0-or-later",
+    "r_package": "gigs",
+    "r_package_license_is_not_automatic_external_dataset_license": true,
+    "r_package_version": "0.5.2",
+    "r_source_url": "https://github.com/ropensci/gigs/tree/v0.5.2/R",
+    "rights_gap": "Confirm GPL coverage and contribution rights for the precise 43 fitted parameters; article copyright and software GPL are distinct",
+    "source_form": "intergrowth_coefficients.json",
+    "source_sha256": "fe3d62fd373d567ffe8be804c4fc80a0dad667084d831afc899ba9441b61bb13",
+    "source_url": "https://intergrowth21.tghn.org/standards-tools/"
+  },
+  "intergrowth_very_preterm_birth_weight": {
+    "family": "intergrowth",
+    "license_review_status": "pending",
+    "official_project_endorsement_url": "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+    "original_articles": [
+      "https://doi.org/10.1016/S2214-109X(15)00163-1",
+      "https://doi.org/10.1016/S0140-6736(16)00384-6"
+    ],
+    "r_embedded_license": "GPL-3.0-or-later",
+    "r_package": "gigs",
+    "r_package_license_is_not_automatic_external_dataset_license": true,
+    "r_package_version": "0.5.2",
+    "r_source_url": "https://github.com/ropensci/gigs/tree/v0.5.2/R",
+    "rights_gap": "Confirm GPL coverage and contribution rights for the precise 43 fitted parameters; article copyright and software GPL are distinct",
+    "source_form": "intergrowth_coefficients.json",
+    "source_sha256": "fe3d62fd373d567ffe8be804c4fc80a0dad667084d831afc899ba9441b61bb13",
+    "source_url": "https://intergrowth21.tghn.org/standards-tools/"
+  }
+}

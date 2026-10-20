@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pedgrowth-data-who2006"
+version = "1.0.0"
+description = "Optional who2006 reference tables and plans for pedgrowth"
+requires-python = ">=3.11"
+readme = "README.md"
+license-files = ["SOURCE_RIGHTS.md", "R_PACKAGE_GPL_LICENSE.txt", "LICENSE"]
+dependencies = ["pedgrowth==1.0.0", "openpyxl>=3.1"]
+
+[project.entry-points."pedgrowth.references"]
+who2006 = "pedgrowth.data.who2006:register"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
+include = ["pedgrowth.data.who2006*"]
+
+[tool.setuptools.package-data]
+"pedgrowth.data.who2006" = ["data/*.json", "py.typed"]

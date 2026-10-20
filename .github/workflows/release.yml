@@ -1,0 +1,143 @@
+name: Automated MIT core PyPI release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pedgrowth-core-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: read
+
+  build:
+    needs: [validate]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download previous published API schema
+        id: baseline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          LATEST=$(gh release list --repo "$GITHUB_REPOSITORY" --limit 100 --json tagName,isDraft --jq '[.[] | select(.isDraft == false) | .tagName | select(test("^v[0-9]+\\.[0-9]+\\.[0-9]+$"))] | first // ""')
+          if [ -n "$LATEST" ]; then
+            echo "version=${LATEST#v}" >> "$GITHUB_OUTPUT"
+            mkdir -p .local/previous
+            gh release download "$LATEST" --repo "$GITHUB_REPOSITORY" --pattern api-schema.json --dir .local/previous
+            test -s .local/previous/api-schema.json
+          fi
+      - name: Generate and compare public API schemas
+        id: version
+        env:
+          PREVIOUS: ${{ steps.baseline.outputs.version }}
+        run: |
+          python scripts/api_schema.py --output api-schema.json
+          if [ -n "$PREVIOUS" ]; then
+            VERSION=$(python scripts/auto_version.py --previous-version "$PREVIOUS" --previous-schema .local/previous/api-schema.json --write)
+          else
+            VERSION=$(python scripts/auto_version.py --write)
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - run: python -m pip install build 'setuptools>=77' wheel
+      - run: python -m pip install --no-deps -e ./packages/pedgrowth
+      - name: Build standalone MIT core
+        run: python scripts/build_distributions.py --mode publication --components core --output-dir dist
+      - name: Verify injected version in source and MIT distribution
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: python scripts/verify_release_version.py "$VERSION"
+      - run: python scripts/check_wheel.py dist/pedgrowth-*.whl
+      - name: Verify MIT core sdist contains no third-party scientific data
+        run: python scripts/check_sdist.py dist/pedgrowth-*.tar.gz
+      - name: Archive injected per-project versions for source tagging
+        run: tar -czf release-versioned-sources.tar.gz api-schema.json packages/*/pyproject.toml packages/pedgrowth/src/pedgrowth/__init__.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pedgrowth-release-distributions
+          path: |
+            dist/*
+            api-schema.json
+            release-versioned-sources.tar.gz
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/pedgrowth/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: pedgrowth-release-distributions
+          path: release-artifacts/
+      - name: Prepare only the MIT core wheel and source distribution
+        run: |
+          mkdir dist
+          find release-artifacts -type f -name '*.whl' -exec cp {} dist/ \;
+          find release-artifacts -type f -name '*.tar.gz' ! -name 'release-versioned-sources.tar.gz' -exec cp {} dist/ \;
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
+          attestations: true
+
+  tag:
+    needs: [build, publish]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: pedgrowth-release-distributions
+          path: release-artifacts/
+      - name: Tag exact version-injected release source
+        env:
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # The publication build injects the version without committing to main.
+          # Tag a source snapshot containing exactly the published wheel metadata.
+          VERSIONED_SOURCES=$(find release-artifacts -type f -name release-versioned-sources.tar.gz -print -quit)
+          test -n "$VERSIONED_SOURCES"
+          tar -xzf "$VERSIONED_SOURCES" -C .
+          git add api-schema.json packages/*/pyproject.toml packages/pedgrowth/src/pedgrowth/__init__.py
+          if ! git diff --cached --quiet; then
+            git commit -m "Release pedgrowth v$VERSION source snapshot"
+          fi
+          git tag "v$VERSION" HEAD
+          git push origin "v$VERSION"
+      - name: Publish API schema with GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          MANIFEST=$(find release-artifacts -name BUILD_MANIFEST.json -print -quit)
+          test -n "$MANIFEST"
+          gh release create "v$VERSION" release-artifacts/api-schema.json "$MANIFEST" --title "pedgrowth $VERSION" --generate-notes

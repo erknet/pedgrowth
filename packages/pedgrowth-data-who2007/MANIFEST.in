@@ -1,0 +1,2 @@
+recursive-exclude src/pedgrowth/data/who2007/data *.lmsb
+prune src/pedgrowth/data/who2007/data/source_tables

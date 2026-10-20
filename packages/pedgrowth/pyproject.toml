@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pedgrowth"
+version = "1.0.0"
+description = "Pedgrowth: pediatric WHO, CDC, and INTERGROWTH z-scores with reproducible references"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Eyal Rahmani"}]
+maintainers = [{name = "Eyal Rahmani"}]
+keywords = ["pediatric", "growth", "anthropometry", "WHO", "CDC", "INTERGROWTH", "z-score"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Healthcare Industry",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/erknet/pedgrowth"
+Repository = "https://github.com/erknet/pedgrowth"
+Issues = "https://github.com/erknet/pedgrowth/issues"
+"WHO growth standards" = "https://www.who.int/tools/child-growth-standards"
+"CDC growth charts" = "https://www.cdc.gov/growthcharts/"
+
+[project.optional-dependencies]
+# Source packages are built from this monorepo. Until source-specific rights
+# are cleared and the packages are published, resolve extras from the
+# local build wheelhouse using --no-index --find-links.
+who2006 = ["pedgrowth-data-who2006==1.0.0"]
+who2007 = ["pedgrowth-data-who2007==1.0.0"]
+who = ["pedgrowth-data-who2006==1.0.0", "pedgrowth-data-who2007==1.0.0"]
+cdc = ["pedgrowth-data-cdc==1.0.0"]
+intergrowth = ["pedgrowth-data-intergrowth==1.0.0"]
+all = ["pedgrowth-data-who2006==1.0.0", "pedgrowth-data-who2007==1.0.0", "pedgrowth-data-cdc==1.0.0", "pedgrowth-data-intergrowth==1.0.0"]
+test = ["pytest>=8"]
+refresh = ["openpyxl>=3.1", "requests>=2.31"]
+numpy = ["numpy>=1.26"]
+pandas = ["pandas>=2.0", "numpy>=1.26"]
+scipy = ["numpy>=1.26", "scipy>=1.12"]
+vector = ["numpy>=1.26", "scipy>=1.12"]  # Backward-compatible alias.
+dev = ["pytest>=8", "mypy>=1.14", "ruff>=0.9", "numpy>=1.26", "scipy>=1.12", "scipy-stubs>=1.15", "types-setuptools>=75", "types-openpyxl>=3.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pedgrowth*"]
+
+[tool.setuptools.package-data]
+pedgrowth = ["py.typed"]
+
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["pedgrowth", "scripts", "setup.py"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP", "S"]
+ignore = ["E741"]  # "l" is standard mathematical notation in LMS.
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # Assertions are appropriate in tests.

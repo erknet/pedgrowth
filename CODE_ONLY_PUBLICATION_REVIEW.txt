@@ -1,0 +1,1 @@
+PEDGROWTH CODE-ONLY MONOREPO RELEASE CANDIDATE (UNPUBLISHED): no scientific CSVs, LMSB coefficients, or protected research fixtures. CDC, WHO and INTERGROWTH acquire verified upstream data when referenced. Publication still requires review of original Git history, upstream data-use conditions, and GitHub/PyPI configuration.

@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv*/
+.local/
+dist/
+build/
+
+# Historical cache and scientific reference snapshots (NOT public source files)
+pygrowup_erknet/tables/cache/
+
+# Editors
+.DS_Store
+.idea/
+.vscode/
+
+
+# Source-specific WHO/INTERGROWTH scientific datasets: never stage in Git
+# Exclude both compiled tables and normalized coefficient source files.
+packages/pedgrowth-data-who2006/src/pedgrowth/data/who2006/data/*.lmsb
+packages/pedgrowth-data-who2006/src/pedgrowth/data/who2006/data/source_tables/
+packages/pedgrowth-data-who2007/src/pedgrowth/data/who2007/data/*.lmsb
+packages/pedgrowth-data-who2007/src/pedgrowth/data/who2007/data/source_tables/
+packages/pedgrowth-data-intergrowth/src/pedgrowth/data/intergrowth/data/intergrowth_coefficients.json
+# Local research snapshots must not enter a public Git repository.
+validation/source_data/*.csv
+validation/source_data/*.lmsb
+validation/source_data/intergrowth_coefficients.json
+# Legacy paths may still appear in Git history; ignore any future copies.
+growthcharts/data/who_*.csv
+growthcharts/data/who2007_*.csv
+growthcharts/data/intergrowth_coefficients.json
+growthcharts/data/*.lmsb
+# Downloaded upstream scientific files and locally generated table caches.
+*.who-original.xlsx
+*.gigs-original.tar.gz
+.reference-cache/
+
+
+# Legacy source-cache locations; never restage WHO tables.
+growthcharts/tables/cache/who_*.csv
+growthcharts/tables/cache/who2007_*.csv
+# CDC reference content is intentionally private pending source-rights review.
+packages/pedgrowth-data-cdc/src/pedgrowth/data/cdc/data/*.lmsb
+packages/pedgrowth-data-cdc/src/pedgrowth/data/cdc/data/source_tables/
+
+
+# Pending rights/provenance review: previously staged reference-derived datasets.
+growthcharts/data/cdc_*.csv
+growthcharts/tables/cache/cdc_*.csv
+tests/fixtures/intergrowth/*.csv
+tests/fixtures/who_r/*.csv
+tests/fixtures/official_percentiles/*.csv
+tests/fixtures/legacy_outputs.json
+
+# Older duplicated scientific coefficient CSVs in the generic core source tree.
+packages/pedgrowth/src/pedgrowth/tables/cache/
+
+# Legacy inherited datasets are not necessary for a code-only public tree.
+tests/legacy/testdata/
+pygrowup_erknet/testdata/
+growthcharts/testdata/

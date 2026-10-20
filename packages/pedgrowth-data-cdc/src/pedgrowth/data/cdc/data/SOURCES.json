@@ -1,0 +1,86 @@
+{
+  "snapshot_date": "2026-10-16",
+  "tables": {
+    "cdc_bmi_for_age": {
+      "csv_sha256": "c3c59c42fc2b4e4f2886a7ca49a6844be662d8e135d5781717fef2fda2fd4052",
+      "lmsb_sha256": "e749f2f4b242fcfb3e45886f14647cb94b19d9f5fdc7b2b62e2ddf88345041f6",
+      "reference_version": "CDC 2022 Extended BMI-for-Age",
+      "rows": 438,
+      "source_sha256": "7f416a213157a5209bb6cbfd1b19292510248f3f31fe43c9ff63f6d8e39f7890",
+      "source_url": "https://www.cdc.gov/growthcharts/data/extended-bmi/bmi-age-2022.csv",
+      "standard": "CDC"
+    },
+    "cdc_bmi_for_age_2000": {
+      "csv_sha256": "76ca2dd2ddbb661a32170e3816f69a9ccc05b92a58bc726599dbc339b25d3abf",
+      "lmsb_sha256": "79d8a4be9153938c870bb4e77a31a6d88ff5e241291210f5fa1638ffd9ba9023",
+      "reference_version": "CDC 2000",
+      "rows": 438,
+      "source_sha256": "cbeea0e8d500ee15c652f3fdc45bcd02cb9c15d4d1e86f4d8048bbfea8d166e5",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/bmiagerev.csv",
+      "standard": "CDC"
+    },
+    "cdc_head_circumference_for_age": {
+      "csv_sha256": "401f4093f2638cf56a2359a28b6033de6097acade0934885fbd8a9dc0997c276",
+      "lmsb_sha256": "6182e58a9f7664318fa23c1b7ccf8d3f529d3188356e65773122925e885e9fc9",
+      "reference_version": "CDC 2000 Growth Charts",
+      "rows": 76,
+      "source_sha256": "bf7e2d7af8fdb336f0b159e480414842136da960ea6a730b7e73d1060b4549e9",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/hcageinf.csv",
+      "standard": "CDC"
+    },
+    "cdc_height_for_age_24_240": {
+      "csv_sha256": "5a53c7384b0005f793276214d97ace6e4872ab869eb260d7c7dbe7f71a8e5274",
+      "lmsb_sha256": "312893384be511f1e12bd793e7e6311a3be920616a90bbe892f111acff32e366",
+      "reference_version": "CDC 2000 Growth Charts",
+      "rows": 436,
+      "source_sha256": "45130d2a9d7c50c54a47e7ba626b66c61d4554bc2d901198cedd9419a53f7251",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/statage.csv",
+      "standard": "CDC"
+    },
+    "cdc_length_for_age_0_36": {
+      "csv_sha256": "3669756c8593c014103959d9d4e484f711a69e1123ccc839762072489873f39a",
+      "lmsb_sha256": "4ae127dc6aff05a93d1445923867ab458b9d7e07055a6622d5b259ce39f02937",
+      "reference_version": "CDC 2000 Growth Charts",
+      "rows": 74,
+      "source_sha256": "a334b86bc0ecde80d12cdc172dde17b4390ca53ac372b26dd0d72d8502ac2687",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/lenageinf.csv",
+      "standard": "CDC"
+    },
+    "cdc_weight_for_age_0_36": {
+      "csv_sha256": "7682e11e5a26866a9304fdc3f92684a2b737a369ade7c9959e20913660397a9e",
+      "lmsb_sha256": "bbbd4605c2d98aa21beaa10729ed489463656a49a0760648f69ab2e9db9c49d9",
+      "reference_version": "CDC 2000 Growth Charts",
+      "rows": 76,
+      "source_sha256": "73221dd4de82eb9a70c1e6dd45c9b9e285fa1a3d7fff4971c3b85c1be6e5feed",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/wtageinf.csv",
+      "standard": "CDC"
+    },
+    "cdc_weight_for_age_24_240": {
+      "csv_sha256": "4b13a40102b9f1968fba8960c24eec2094a69caf4d8367d4b20527467763f068",
+      "lmsb_sha256": "028d6e2ff24b7f1dcdad0d81be3d471d6e2b80e083d3a16b2edf17e5385e3503",
+      "reference_version": "CDC 2000 Growth Charts",
+      "rows": 436,
+      "source_sha256": "3406c9d125bcb69c062a9e84eb8c0209bfe9346542bdc1d308643750dcc241b7",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/wtage.csv",
+      "standard": "CDC"
+    },
+    "cdc_weight_for_height": {
+      "csv_sha256": "024870324cda47177eef9282a40d5ea53aa514af06b6163f7b5cb491550f5eba",
+      "lmsb_sha256": "4eedc0132504e87ee1149f0dbfea2cad039ce04a79f8d8a95990212d4af3a552",
+      "reference_version": "CDC 2000 Growth Charts",
+      "rows": 92,
+      "source_sha256": "0f75b6ef7ac725c311bd3ff9d50c5b3b415b7faa00c99126b04f4f9a1c773db3",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/wtstat.csv",
+      "standard": "CDC"
+    },
+    "cdc_weight_for_length": {
+      "csv_sha256": "e0b025dfce65f25b6100a74b2cea2e6795b88c23bf2e47d66ad7d69e0a15c1ea",
+      "lmsb_sha256": "cf764a72f6cfa5109ad022fcdafa0d848e3c769ef40773a3dea541df55bdcc92",
+      "reference_version": "CDC 2000 Growth Charts",
+      "rows": 120,
+      "source_sha256": "3dd616c8d11ad8ad5470929477609e6fc44cb2e5f7b95494061e1413a0034249",
+      "source_url": "https://www.cdc.gov/growthcharts/data/zscore/wtleninf.csv",
+      "standard": "CDC"
+    }
+  }
+}
