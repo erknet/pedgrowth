@@ -71,7 +71,7 @@ jobs:
         run: python scripts/check_sdist.py dist/pedgrowth-*.tar.gz
       - name: Archive injected per-project versions for source tagging
         run: tar -czf release-versioned-sources.tar.gz api-schema.json packages/*/pyproject.toml packages/pedgrowth/src/pedgrowth/__init__.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: pedgrowth-release-distributions
           path: |

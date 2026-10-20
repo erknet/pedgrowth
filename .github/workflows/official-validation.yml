@@ -51,7 +51,7 @@ jobs:
           Rscript --vanilla scripts/export_intergrowth_gigs_r.R tests/fixtures/intergrowth/continuous_inputs.csv .local/validation/gigs-continuous.csv "$R_SOURCE"
           python scripts/verify_external_r_snapshots.py .local/validation/who-baseline.csv .local/validation/who-challenges.csv .local/validation/cdc-bmi.csv .local/validation/who-positions.csv --intergrowth .local/validation/gigs-continuous.csv --clinical .local/validation/clinical-cases.csv
       - name: Retain independent R reference values
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: official-r-reference-values
           path: .local/validation/*.csv
