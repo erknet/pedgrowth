@@ -1,0 +1,4 @@
+# Do not package third-party numerical growth-reference data.
+# The end user's installation downloads and verifies pinned CDC CSV sources.
+recursive-exclude src/pedgrowth/data/cdc/data *.lmsb
+prune src/pedgrowth/data/cdc/data/source_tables

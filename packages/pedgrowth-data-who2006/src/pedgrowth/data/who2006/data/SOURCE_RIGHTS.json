@@ -1,0 +1,52 @@
+{
+  "expected_reference_count": 18,
+  "installed_by_default": false,
+  "license_expression": null,
+  "official_reference_pages": [
+    {
+      "label": "WHO Child Growth Standards 2006: published standards and original LMS data",
+      "url": "https://www.who.int/tools/child-growth-standards/standards"
+    }
+  ],
+  "packaging_code_license_expression": "GPL-3.0-only",
+  "pending_clearance_details": "14 WHO reference tables include 30 additional days each outside anthro R. Website-specific authorization remains outstanding for 420 rows.",
+  "provider": "World Health Organization",
+  "r_package": {
+    "copyright_holder": "World Health Organization (as declared in R package DESCRIPTION)",
+    "declared_license": "GPL-3",
+    "name": "anthro",
+    "package_source_archive_url": "https://cran.r-project.org/src/contrib/anthro_1.1.0.tar.gz",
+    "package_url": "https://cran.r-project.org/package=anthro",
+    "source_code_url": "https://github.com/WorldHealthOrganization/anthro",
+    "spdx_license_expression": "GPL-3.0-only",
+    "version": "1.1.0"
+  },
+  "r_package_usage_and_packaging_basis": "WHO's own GPL-3 anthro R package provides an independent software/data reference: its embedded coefficient arrays were compared record-by-record, its implementation defines relevant methodological and clinical usage conventions, and its source distribution informed provenance and file attribution. The pedgrowth LMS packaging format and Python algorithms were independently implemented.",
+  "r_program_license_is_data_redistribution_grant": false,
+  "redistribution_in_mit_core": false,
+  "rights_evidence_sources": [
+    "https://cran.r-project.org/src/contrib/anthro_1.1.0.tar.gz",
+    "https://www.who.int/about/policies/publishing/permissions"
+  ],
+  "rights_status": "source_specific_review_required",
+  "scientific_values_origin": "The values are derived from WHO Child Growth Standards 2006 official downloadable coefficient tables, normalized into age/sex-specific LMS CSVs and independently compiled into LMS binaries. The official WHO anthro R package embeds matching LMS values for its covered age domain: 28,228 LMS records match across WHO 2006/2007 combined, with no mismatches, but 420 WHO 2006 records in the pedgrowth source files fall outside the anthro package's reference age domain.",
+  "source_form_in_data_distribution": true,
+  "standard": "WHO Child Growth Standards 2006",
+  "terms_url": "https://www.who.int/about/policies/publishing/permissions",
+  "validation": {
+    "fixture_paths": [
+      "tests/fixtures/who_r/",
+      "tests/fixtures/clinical_cases_manifest.json"
+    ],
+    "generation_scripts": [
+      "scripts/refresh_data.py",
+      "scripts/export_who_r_oracles.R",
+      "scripts/export_who_r_challenges.R",
+      "scripts/export_who_r_positions.R",
+      "scripts/export_clinical_r_oracles.R"
+    ],
+    "independent_oracle": "WHO-authored anthro R 1.1.0 embedded LMS coefficients and independently computed R z-scores",
+    "input_origin": "WHO 2006 official downloadable LMS tables, checked by source SHA-256 and normalized CSV SHA-256",
+    "limitations": "WHO R has a shorter computational age domain than some WHO downloadable table rows; only independently covered values are considered numerically cross-validated."
+  }
+}

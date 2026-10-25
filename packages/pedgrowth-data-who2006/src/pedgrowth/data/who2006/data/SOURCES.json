@@ -1,0 +1,167 @@
+{
+  "snapshot_date": "2026-10-16",
+  "tables": {
+    "who_bmi_for_age_boys": {
+      "csv_sha256": "714e165caca35dd048ece729abc8ba78006f0352929143b9b280f158bfc723b8",
+      "lmsb_sha256": "57e418c15bea421ab2026018ee63981931ceddb18e4bbc8cc117170672ebce97",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "58dcb2abea0e04b1c4f8ad3511d05ec1bea03741f230ac127b93f929e4cc6fc8",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/body-mass-index-for-age/expanded-tables/bfa-boys-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_bmi_for_age_girls": {
+      "csv_sha256": "62d994d408738ca1aecbe9245e7c2e2e64018b446437604cfa19f87657a66080",
+      "lmsb_sha256": "f339987b639625b4505315fc08f388d57130d38bb8909106dcfe347cab1bc37a",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "d3817262a383cdd02553b004f1c6110527d30b729c70501d032e71caadc17529",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/body-mass-index-for-age/expanded-tables/bfa-girls-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_head_circumference_for_age_boys": {
+      "csv_sha256": "6a4a9a35536d629e6065a2ca0f7c3d9d30d5d6efe3fc5dc46907f20e9412327e",
+      "lmsb_sha256": "2bc2645c34a9f9efad2a9a736dbfe1066ba5e739d41fa9aa46b306e3db593ddb",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "89a657bc466e85f6c8f2e5e7f4635e969bdcf982bb71e519273e43896a1c3314",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/head-circumference-for-age/expanded-tables/hcfa-boys-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_head_circumference_for_age_girls": {
+      "csv_sha256": "fd33a6fe4d205319199bc66f371b9b25d2477786ad1d910b6b7609bbb32c6242",
+      "lmsb_sha256": "cee58f3f8a55cfb4100700123e2deda46fbb62bcc40e48f5a617e0e43d6f5c63",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "8eec3770d1027ce1b3b96a7b89fd1e77070558a7791b17b4462cda8a813324a3",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/head-circumference-for-age/expanded-tables/hcfa-girls-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_length_for_age_boys": {
+      "csv_sha256": "fbf60b1103a0c9907594768316abc5eb78c64855facae5fb37bc93fcdc29917d",
+      "lmsb_sha256": "176c47be896c039a223970ad659c2927acaa1cdb15c9524cc7bec5584909a1b7",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "c4b1c9029ab9751a5f0888e32f35c7c0287a16d361885cf911ecf23b3f7f6b4f",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/length-height-for-age/expandable-tables/lhfa-boys-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_length_for_age_girls": {
+      "csv_sha256": "e194f3bf4f7480a85e50836f9f67fab3c6a649b7728821dfe8b221f81ee1a629",
+      "lmsb_sha256": "5bc958695959aff5c775ca9476f8ef58ca91d50e122561c98c2bc8dbadb6d11e",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "6aa2876319449a6b1f4d825848128902114ff53c67b92b86a0c5140846013059",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/length-height-for-age/expandable-tables/lhfa-girls-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_muac_for_age_boys": {
+      "csv_sha256": "8a98882cf964dd281d2ffd27f6f085133c5bf359afae9d1c6dec8c6db2d86d52",
+      "lmsb_sha256": "aecfe802144b20be599f3bf34a00bfb4115a3ebcd77fa11b5fa62d2c146f16a9",
+      "reference_version": "WHO 2006",
+      "rows": 1766,
+      "source_sha256": "20066947ff80fb5d7718dcae4ead71b4eb747c1d4fd871bdb3434b28dc6d303c",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/arm-circumference-for-age/expanded-tables/acfa-boys-zscore-expanded-tables.xlsx?sfvrsn=76ed87fa_10",
+      "standard": "WHO"
+    },
+    "who_muac_for_age_girls": {
+      "csv_sha256": "540f6dbc385937ee50adcc166760352a1ced2658f09d1f59d0bd9cf57a467576",
+      "lmsb_sha256": "b6c8fb97b6367aacd734305605d4b0043e04b654906f295039f90f6f873de576",
+      "reference_version": "WHO 2006",
+      "rows": 1766,
+      "source_sha256": "ebbfac8c73a017914c970e513bcb0534789c3ad97c5a71ab41a48c2b1b7bba5d",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/arm-circumference-for-age/expanded-tables/acfa-girls-zscore-expanded-tables.xlsx?sfvrsn=31a482c5_8",
+      "standard": "WHO"
+    },
+    "who_subscapular_for_age_boys": {
+      "csv_sha256": "2df9d6ce4e27d839b17e1b87837a48b420ceb8d79f17082f0204c8c5b2f6f980",
+      "lmsb_sha256": "2b7cbed79f6398d9466b4519e1ecf5ffe01e01417a3dc584898cd9f2bb114003",
+      "reference_version": "WHO 2006",
+      "rows": 1766,
+      "source_sha256": "1237308bb76040467e4003ce46681351fbfe8a20e934ba36b59b8b7d44205ae6",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/subscapular-skinfold-for-age/expanded-tables/ssfa-boys-zscore-expanded-table.xlsx?sfvrsn=6fb55c03_10",
+      "standard": "WHO"
+    },
+    "who_subscapular_for_age_girls": {
+      "csv_sha256": "ad61301359070fa51e972e1beb0bbac32fa01c377ad087699bb57480b8564496",
+      "lmsb_sha256": "412df0c4aba7899336abc2ef22f3fb4b3701c27625c095861e3b885a2192fadb",
+      "reference_version": "WHO 2006",
+      "rows": 1766,
+      "source_sha256": "042f5e16d9839f8cf93f7cf1a307860737a1f0149d24e6cf545042c224ef380d",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/subscapular-skinfold-for-age/expanded-tables/ssfa-girls-zscore-expanded-table.xlsx?sfvrsn=37715619_8",
+      "standard": "WHO"
+    },
+    "who_triceps_for_age_boys": {
+      "csv_sha256": "d7fd122ccdd6a879b2992870e57fac6d1eae03eedb9aee51f93724ceabf4c285",
+      "lmsb_sha256": "104b7c2b93a7b2d419f221c2e8d493c52814217a7aa74488e4bd5728b2d331e6",
+      "reference_version": "WHO 2006",
+      "rows": 1766,
+      "source_sha256": "1e0a1d410516338da4fbd5e21bf8b72a5a775ed789818341159b571ce5243db6",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/triceps-skinfold-for-age/expanded-tables/tsfa-boys-zscore-expanded-tables.xlsx?sfvrsn=48eb5de0_8",
+      "standard": "WHO"
+    },
+    "who_triceps_for_age_girls": {
+      "csv_sha256": "a6a161c66a5a859b3c458bce1f24de470369b5c09d661197ad3ca4853b31f00d",
+      "lmsb_sha256": "613cffcebd548800671d814ddf0c986edc87c086bbca3ed4b2a3724be20772b3",
+      "reference_version": "WHO 2006",
+      "rows": 1766,
+      "source_sha256": "9effdedf93590d5404037cf62b4b280568592ce8502118c53d3fac8826033365",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/triceps-skinfold-for-age/expanded-tables/tsfa-girls-zscore-expanded-tables.xlsx?sfvrsn=122fa0d5_8",
+      "standard": "WHO"
+    },
+    "who_weight_for_age_boys": {
+      "csv_sha256": "0f4ca54b5cb91a9131b7391a8d7f7cfd6081ba56216d3fe596ca268efaca9312",
+      "lmsb_sha256": "b0d21eb1c83838dea72c8e5915c6a0f59a23f1c0459f6fdcb8368df012efeafc",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "b5b4748c6bfa5230e2eddafa1767629c349178b08d457f400b59422b8bfef86c",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-age/expanded-tables/wfa-boys-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_weight_for_age_girls": {
+      "csv_sha256": "6f8b2e4c1a9544ea3d40b67ad30577a65dadefcccad819e1d78af7473880b09a",
+      "lmsb_sha256": "7132a58b1795d9b6c5a448c5aa512b45b3a311a5f7501b6c2c34506ee23a6f2c",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 1857,
+      "source_sha256": "ee3ae12cb96c6c5541cdf43665c03ce6c984f877859a183a5f6104eb06a49a6e",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-age/expanded-tables/wfa-girls-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_weight_for_height_boys": {
+      "csv_sha256": "d44c92e4514d8ca4855b8a31366bac255cb6fa76f9ff238347de6bdd9a427192",
+      "lmsb_sha256": "293828629e0f09965b9266df11ab13e82added15bc0e57c1753fdcfb7691f819",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 551,
+      "source_sha256": "ed3b590f9c65937a138408b13618f33684bb6406a0c56d6a2ce3fd9053a3f59f",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfh-boys-zscore-expanded-tables.xlsx",
+      "standard": "WHO"
+    },
+    "who_weight_for_height_girls": {
+      "csv_sha256": "3e8fb6e9e3cc2bdcdd4b9507345a44d048eb6b66a874decaf433853a56300928",
+      "lmsb_sha256": "d7ca537853207b16d675792c178cbaf281dccd70813af1eb2c29072c1dd199e9",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 551,
+      "source_sha256": "fca340d5f04aa1556ac410b176b65b290e1b9ff467fc854a97f9b54ad94c9b8a",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfh-girls-zscore-expanded-tables.xlsx?sfvrsn=daac732c_8",
+      "standard": "WHO"
+    },
+    "who_weight_for_length_boys": {
+      "csv_sha256": "00afe82e6b6ef0ef71c717de2794085340f73d2a07bf000eba39d9e120c87f95",
+      "lmsb_sha256": "974a4f54df8fd0a359c84ca3777cbd36b84f571c0e7c315d2186a1ec44616d84",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 651,
+      "source_sha256": "1a6e9a002d2692d038161bc6572a10f8b9fa0657163808141d2981a2132c59cc",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfl-boys-zscore-expanded-table.xlsx",
+      "standard": "WHO"
+    },
+    "who_weight_for_length_girls": {
+      "csv_sha256": "a560c85b6a0751da49c88880020be95ef781ac3c9e80e5c551e4fb3503555319",
+      "lmsb_sha256": "d424dbcaf4d601a4e754b49404d62abf603b289739b6f14dd1092580bfc8737a",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "rows": 651,
+      "source_sha256": "ec116b8e618ad311d34a87231346badf16c75f5c4f82222ec846e05c582bf16a",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfl-girls-zscore-expanded-table.xlsx",
+      "standard": "WHO"
+    }
+  }
+}

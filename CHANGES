@@ -1,0 +1,241 @@
+1.0.0 (CDC lazy references and copyright clarification, unreleased)
+------------------------------------------------------------------
+- CDC extension now downloads pinned original CSVs on demand and compiles
+  scientific data into a per-user LMSB cache; does not bundle coefficient files.
+- CDC/WHO share the provider-agnostic checksum verification, caching and
+  partial-failure retry logic, with format-specific normalization in extensions.
+- Scoped CDC MIT code license independently of CDC U.S.-federal scientific
+  reference data; added explicit CDC attribution, public-domain limitations,
+  non-endorsement statement and pending source-use review.
+- Updated project code copyright notices to ERKNet and simplified historical
+  provenance to ewheeler/pygrowup.
+
+1.0.0 (main-branch release engineering and tolerant lazy loading, unreleased)
+--------------------------------------------------------------------------------
+- WHO providers now acquire only the specific table requested by computation;
+  unrelated missing files cannot block plan or calculator construction.
+- Optional download_missing_dependencies attempts all registered resources,
+  warns about missing sources, and retries outstanding failures on later calls.
+- Shared verified spreadsheet normalization eliminates duplicated WHO 2006/2007
+  downloader logic. Confirmed all 24 WHO sources live against exact scientific
+  normalized CSV and LMSB hashes, and validated live INTERGROWTH source hash.
+- Separate core-only main-branch PyPI publication from individually approved
+  provider publication; repaired public code-only CI and the weekly WHO check.
+- Preserved private R/scientific validation as an independent strict gate.
+- Corrected remote repository metadata, branch naming, source-rights
+  documentation and copy-protected scientific file ignore rules.
+- Removed 68 legacy reference and reference-derived files from the Git index
+  (WHO, CDC, INTERGROWTH fixtures; historical Git commits untouched).
+- Added public core-only regression tests and targeted acquisition retry tests.
+- Added public-source/archive protection checks and excluded inherited WHO/CDC
+  cache CSVs and legacy test datasets from the release candidate.
+
+1.0.0 (provider-managed lazy scientific data initialization, unreleased)
+----------------------------------------------------------------------------
+- Added pedgrowth.data.download_missing_dependencies() to initialize any
+  missing resources from all registered providers (optional).
+- WHO 2006 and WHO 2007 now verify, download and normalize pinned official
+  XLSX reference sources at first use, compiling LMSB files into user cache.
+- INTERGROWTH reconstructs the 43 audited regression parameters from the pinned
+  source equations in gigs v0.5.2; these are not LMS coefficients.
+- CDC retains its bundled data; installed provider modules and entry-point
+  discovery have no network side effects.
+- Removed protected WHO/INTERGROWTH numeric source files from native wheels and
+  sdists, added Git ignore rules and explicit distribution integrity checks.
+- Introduced persistent source-manifest versioned caches, bounded verified HTTPS
+  downloads, atomic writes and cross-process provider initialization locks.
+- License requirements on original scientific data remain independent of
+  whether acquisition occurs on users' devices.
+
+1.0.0 (shared pedgrowth.data import namespace, unreleased)
+--------------------------------------------------------------
+- Separate WHO 2006, WHO 2007, CDC and INTERGROWTH distributions now contribute
+  pedgrowth.data.<provider> modules instead of pedgrowth_data_<provider>.
+- No legacy aliases: public provider classes are imported directly through the
+  new pedgrowth.data namespace while the core maintains its normal top-level API.
+- Retained independent distribution metadata and lazy entry-point registration.
+  The regular core extends its package search path; the pedgrowth.data namespace
+  does not have a competing __init__.py in any distribution.
+- Confirmed native and editable package installs, including single-provider,
+  core-only and all-provider combinations. Added isolated native-wheel checks
+  to the CI build workflow.
+- Updated API schema, packaging manifests and scientific test imports without
+  modifying reference calculations or coefficient values.
+
+1.0.0 (restored vectorized reference selection, unreleased)
+----------------------------------------------------------------
+- Reinstated NumPy mask-based reference selection in the monorepo: generic core
+  masks and separately registered WHO/CDC scientific-policy array callbacks.
+- Added vectorized INTERGROWTH selection, including PMA domain checks.
+- Added 37 regression cases for no-scalar batch selection and scalar parity.
+- Retained vectorized LMS evaluation and compatibility with scalar-only
+  third-party ReferencePlan implementations.
+
+1.0.0 (provider-specific source licensing and reproducibility, unreleased)
+-------------------------------------------------------------------------
+- Retained the five independently installable Python distributions in one monorepo.
+- Added a source-hash-bound rights audit for 33 WHO/CDC LMS tables and seven
+  INTERGROWTH equation models; documented the 420 WHO 2006 source records absent
+  from the officially GPL-licensed WHO anthro R coefficient arrays.
+- Each WHO/CDC data wheel and sdist now supplies an editable normalized CSV for
+  every compiled LMS binary, alongside its file-specific original-source rights
+  evidence, R validation provenance and SHA-256.
+- Separated independent CDC bootstrap MIT licensing from cdcanthro GPL software;
+  provider numerical data always retain independent original-source rights.
+- Source rights approval is scoped to one provider and fingerprinted to its exact
+  audited reference inventory; the default five-provider release remains fail-closed.
+- Published no third-party datasets; created private, non-publishable local QA builds.
+
+1.0.0 (avoid third-party import collision, unpublished)
+---------------------------------------------------
+- Moved the Python implementation into the pedgrowth namespace, rather than
+  shipping a legacy growthcharts import that would conflict with an unrelated
+  existing PyPI distribution owning that module name.
+- Distribution, importable module, build resources and release checks all use
+  pedgrowth; scientific APIs and third-party R license boundaries are retained.
+
+1.0.0 (pedgrowth distribution identity, unpublished)
+------------------------------------------------
+- Selected pedgrowth as PyPI distribution and top-level public import;
+  rejected a legacy growthcharts namespace because another PyPI distribution owns it.
+- Updated release version verification, wheel validator, CI labels, metadata,
+  URLs and documentation; unrestricted publication remains gated.
+- Verified independent R tool licenses and kept them outside runtime wheels.
+
+1.0.0 (final independent clinical / extreme / reproducibility / rights audit, unreleased)
+---------------------------------------------------------------------------------------
+- Added published CDC worked cases and 37 independent clinical-like,
+  synthetic WHO/CDC scenarios with official R-generated expected values.
+- Added per-table extreme-measurement stress, rare numerical overflow handling
+  with domain-specific errors, and high-precision CDC BMI/WHO SD tails.
+- Added 12-job Linux/Windows/macOS Python 3.11-3.14 reproducibility CI,
+  a 162-scenario cross-runtime reference/z-score comparator, and a
+  blocking release gate for missing platform results.
+- Live-verified SHA-256 hashes and all normalized content of 33/33
+  WHO/CDC source reference downloads.
+- Added source-specific third-party rights notices to wheel metadata,
+  a complete machine-checked licensing/source inventory, and a fail-closed
+  public release gate pending documented rights-holder/qualified legal review.
+- Source-specific rights and actual cloud CI remain pending, so this
+  is not a clinically certified or publicly published release.
+
+1.0.0 (independent INTERGROWTH and formal policy audit, unreleased)
+------------------------------------------------------------------
+- Validated all 7 INTERGROWTH equation tables against 4,970 continuous
+  independent outputs computed from the original, SHA-pinned gigs v0.5.2 R
+  source functions; scalar and NumPy comparisons agree to <2e-10 z.
+- Added an independent 68-case policy oracle for all 6 predefined GrowthPlans,
+  with comprehensive indicator/sex/age boundary property tests.
+- Fixed WHO-only WFL/WFH reference selection for age-aware positions and
+  aligned the NumPy mask resolver with scalar selection.
+- Tightened IntergrowthPlan to require 27–64 weeks' postmenstrual-age context
+  for all indicators, including WFL; direct equation tables remain available.
+- Added hash-pinned independent R regeneration to release-gating CI and
+  documented scoped clinical and source-precedence policy limitations.
+
+1.0.0 (scientific validation update, unreleased)
+------------------------------------------------
+- Validated 24 WHO tables against baseline WHO R values and a large external
+  challenge matrix including boundary/interior coordinates and extreme tails.
+- Added CDC R and position-change oracles, reference hashes, plan-resolution
+  oracle cases, scalar/NumPy numerical comparisons, and scientific invariants.
+- Fixed the WHO +/-3 SD tail adjustment in WFA and skinfold/MUAC tables.
+- Corrected stable high-BMI normal-survival calculations and CDC plan chart
+  transitions and measurement-position adjustments.
+- Aligned supported CI Python versions with the 3.11+ runtime minimum.
+- See docs/SCIENTIFIC_READINESS.md for scientific and clinical limitations.
+
+1.0.0 (proposed, unreleased)
+----------------------------
+- Installed isolated R 4.5 in project-local .local/r, with anthroplus 1.1.0
+  and cdcanthro 0.4.0; independent WHO/CDC comparison succeeded for all
+  108 observations (maximum absolute difference 0.0165135 z-score units).
+- Fixed the real cdcanthro 0.4.0 data.table lookup issue and use the current
+  independent cdc_z API; shared local/GitHub validation runner and retained
+  official calculated reference values as CI artifacts.
+- Added genuinely optional [numpy] support without any NumPy dependency
+  in core dependencies or SciPy dependency in the [numpy] extra. [scipy]
+  optionally accelerates high-BMI tail calculations. [vector] remains an
+  optional backward-compatible extras alias.
+- Overloaded all public calculator methods: scalar measurements remain
+  float/None, NumPy arrays transparently use compiled NumPy math and return
+  float64 ndarrays, with broadcasting and optional SciPy fallback.
+- Added TableDefinition and CsvGrowthTable adapter for new external reference
+  datasets, retaining trusted GrowthTable algorithmic subclasses. Abstract
+  base methods enforced, per-instance SHA-256 provenance and first-match
+  table precedence documented.
+- Added independent wheel install checks for pure scalar and NumPy-without-
+  SciPy environments, plus tests for casting, array dispatch, extension,
+  validation and provenance. Local R is ignored and excluded from builds.
+
+0.12.0 (proposed, unreleased)
+----------------------------
+- Added explicit standard selection (WHO, CDC, WHO→CDC, CDC→WHO) and
+  opt-in linear interpolation while preserving nearest-row legacy defaults.
+- Extended CDC 2022 reference data and binary LMS format to retain the
+  original published P95 column, with CDC age-specific quadratic sigma
+  regression for interpolated ages.
+- Added typed MeasurementPosition alongside the backward-compatible flag.
+- Added independently published WHO AnthroPlus and CDC example tests,
+  and an external WHO anthroplus / CDC cdcanthro R comparison workflow.
+- Tagged releases now require passing project CI and independent R validation.
+- Added SHA-pinned GitHub Actions, Dependabot, optional dependency auditing,
+  protected PyPI OIDC trusted publishing with signed provenance attestations.
+- Cached immutable NumPy LMS arrays for repeated vector calls; expanded
+  scalar/vector parity tests and clarified full reference-selection policies.
+- Detailed reproducible packaging/provenance documentation, source-only
+  table CSVs, extended data-only override validation and release checklist.
+- Source wheel data format upgraded to PGLMS02, with numerical P95.
+
+0.11.0 (proposed, unreleased)
+----------------------------
+- Added WHO 2007 BMI/height (61–228 months) and weight (61–120 months)
+  using the six official monthly LMS reference files.
+- Added WHO 2006 mid-upper-arm circumference, triceps skinfold,
+  subscapular skinfold (both sexes) and the separate CDC 2000 BMI
+  reference alongside existing CDC 2022 Extended BMI.
+- Recorded raw upstream SHA-256 checksums for all 33 official source files.
+- Added online --live verification: download upstream source, check original
+  raw-file SHA-256, then convert and byte-compare the complete normalized
+  coefficients; scheduled/manual GitHub CI workflow.
+- Added a safe, deterministic, non-executable compiled numeric format (.lmsb)
+  built into wheel distributions directly from CSV. Binary data is decoded
+  only on first use and then cached in-process; editable/source installs
+  fall back to CSV. No pickle, marshal, eval, or runtime compilation.
+- Kept file-based CSV overrides and provenance checks unchanged.
+- Hardened PEP 561 strict typing, Ruff import/bugbear/security/format checks,
+  and cleaned up the WHO 2007 inheritance hierarchy and source-only legacy tests.
+- Added opt-in NumPy/SciPy C-vectorized batch calculations with scalar parity
+  tests and a reproducible benchmark; scalar API remains dependency-free.
+- Enforced strict binary-only reference packaging in wheels (33 .lmsb files,
+  no CSV fixtures or source-only tests); SDist preserves all 33 source CSVs.
+- Added wheel inspection gate, isolated install checks and pre-release review.
+
+0.10.0 (earlier modernization; not published)
+----------------------------
+- Modernized packaging via pyproject.toml, Python 3.10+.
+- Made the runtime standard-library-only.
+- Bundled versioned WHO and CDC LMS table snapshots; eliminated runtime
+  network downloads, openpyxl dependency, and writes to site-packages.
+- Implemented cached table loading and bisect-based nearest reference
+  lookup; retained the legacy API, default reference precedence, and
+  nearest-index semantics.
+- Validated finite positive measurements and appropriate age/length
+  inputs; corrected L=0 SD calculation.
+- Corrected the 2022 CDC extended BMI cutoff: only BMI above P95 uses
+  the extended half-normal formula. Legacy code used a P97.5 cutoff.
+- Corrected internal percentile utility names to represent conventional
+  cumulative probabilities: z_to_percentile(0)=0.5 and
+  percentile_to_z(0.95)=1.64485. Code importing these internal helpers
+  directly should be reviewed.
+- Added typed exceptions, numerically reproducible regression fixtures,
+  data SHA-256 provenance, offline tests, and a GitHub Actions workflow.
+- Preserved TableType.WeightForHeigt as an alias of WeightForHeight.
+- Added validated, local, instance-scoped CSV replacement for individual
+  reference datasets through GrowthChartsCalculator(table_overrides=...). Exposes
+  table_override_hashes for reproducible analysis.
+- Added static and behavioral security tests rejecting executable expressions,
+  unsafe values, wrong sex partitions and incomplete extended BMI datasets.
+- Added offline one-table conversion utility for official WHO/CDC files.
+
+Prior releases: see git history.

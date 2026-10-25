@@ -1,0 +1,39 @@
+{
+  "scope": "unrestricted_public_python_distribution",
+  "legal_reviewer": "REPLACE_WITH_ACCOUNTABLE_HUMAN_REVIEWER",
+  "notes": "Template only. Pending entries never authorize release. A reviewer must check each source independently, approve the exact table manifest and provide applicable source-data rights evidence.",
+  "providers": {
+    "who2006": {
+      "status": "pending",
+      "evidence_url": "https://cran.r-project.org/src/contrib/anthro_1.1.0.tar.gz",
+      "reviewed_for_release": "1.0.0",
+      "reference_manifest_sha256": "aebd837b2265d66183c907525c7498bc845adc748addfc9d03650850b396d488",
+      "data_license_basis": "REPLACE with a source-specific statement (at least 30 characters) documenting why data may be redistributed in public commercial and noncommercial Python wheels and sdists; include license compatibility and source requirements.",
+      "review_notes": "14 WHO reference tables include 30 additional days each outside anthro R. Website-specific authorization remains outstanding for 420 rows."
+    },
+    "who2007": {
+      "status": "pending",
+      "evidence_url": "https://cran.r-project.org/src/contrib/anthroplus_1.1.0.tar.gz",
+      "reviewed_for_release": "1.0.0",
+      "reference_manifest_sha256": "02af49bdf72fbecc3d45c1502e34e00b31ca7070982f6419d9414ee15d7c6a33",
+      "data_license_basis": "REPLACE with a source-specific statement (at least 30 characters) documenting why data may be redistributed in public commercial and noncommercial Python wheels and sdists; include license compatibility and source requirements.",
+      "review_notes": "All six tables match WHO-owned anthroplus R; verify that embedded data are granted under GPL and that transformation and source-form obligations are met."
+    },
+    "cdc": {
+      "status": "pending",
+      "evidence_url": "https://www.cdc.gov/other/agencymaterials.html",
+      "reviewed_for_release": "1.0.0",
+      "reference_manifest_sha256": "1ed8272008da6d2f58ce9352086d4ebaff21707a1c3f18f7dffa17bb23290894",
+      "data_license_basis": "REPLACE with a source-specific statement (at least 30 characters) documenting why data may be redistributed in public commercial and noncommercial Python wheels and sdists; include license compatibility and source requirements.",
+      "review_notes": "Original CDC authored public-domain data; verify no third-party rights and jurisdictional complications before public listing."
+    },
+    "intergrowth": {
+      "status": "pending",
+      "evidence_url": "https://github.com/ropensci/gigs/releases/tag/v0.5.2",
+      "reviewed_for_release": "1.0.0",
+      "reference_manifest_sha256": "66dc7877478ec8d0f8527ee47699ab7da9485990a72cd3a2687444a9ea25cebc",
+      "data_license_basis": "REPLACE with a source-specific statement (at least 30 characters) documenting why data may be redistributed in public commercial and noncommercial Python wheels and sdists; include license compatibility and source requirements.",
+      "review_notes": "Gigs GPL code and consortium endorsement are documented but source-specific fitted parameter grant has not been verified."
+    }
+  }
+}

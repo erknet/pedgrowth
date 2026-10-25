@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pedgrowth-data-intergrowth"
+version = "1.0.0"
+description = "Optional intergrowth reference tables and plans for pedgrowth"
+requires-python = ">=3.11"
+readme = "README.md"
+license-files = ["SOURCE_RIGHTS.md", "R_PACKAGE_GPL_LICENSE.txt", "LICENSE"]
+dependencies = ["pedgrowth==1.0.0"]
+
+[project.entry-points."pedgrowth.references"]
+intergrowth = "pedgrowth.data.intergrowth:register"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
+include = ["pedgrowth.data.intergrowth*"]
+
+[tool.setuptools.package-data]
+"pedgrowth.data.intergrowth" = ["data/*.json", "py.typed"]
+
+[tool.setuptools.exclude-package-data]
+"pedgrowth.data.intergrowth" = ["data/intergrowth_coefficients.json"]

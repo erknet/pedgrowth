@@ -1,0 +1,59 @@
+{
+  "snapshot_date": "2026-10-16",
+  "tables": {
+    "who2007_bmi_for_age_boys": {
+      "csv_sha256": "9b47d1b4d9c5e1223f3293e205caf9c6ba2bae9bed5350dfded28b3bf697ea87",
+      "lmsb_sha256": "9b039382a3d66d427a966620b2e8799ca0a72bf34e87adbc76ec312009cfb8af",
+      "reference_version": "WHO 2007",
+      "rows": 168,
+      "source_sha256": "0a60849673f34a06b8e2fe4defe5d00348de687b6c9fce0278f1525fff89eb6d",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/bmi-for-age-%285-19-years%29/bmi-boys-z-who-2007-exp.xlsx?sfvrsn=a84bca93_2",
+      "standard": "WHO"
+    },
+    "who2007_bmi_for_age_girls": {
+      "csv_sha256": "2fba3a380ef796c8be55c9c3c2bf7b8d86e7f22f58246dc242a1272e4db94684",
+      "lmsb_sha256": "a18eb18ebeaa46a0d44537072a6df8a794370369c492c7deba76260f9ed9860a",
+      "reference_version": "WHO 2007",
+      "rows": 168,
+      "source_sha256": "66f5c6284b44579ad6135fc639f22c09e36fe5a695b04390377113f6a00deb72",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/bmi-for-age-%285-19-years%29/bmi-girls-z-who-2007-exp.xlsx?sfvrsn=79222875_2",
+      "standard": "WHO"
+    },
+    "who2007_height_for_age_boys": {
+      "csv_sha256": "d20df82ce25d4e8cdd6a1895eb2ea197f66f502b5dda860cce55f5686a33be45",
+      "lmsb_sha256": "395b9240c2c0049cfb6d72bab8020e01179a1335f54af31d009d2e1dc27af814",
+      "reference_version": "WHO 2007",
+      "rows": 168,
+      "source_sha256": "d78fa8cafcab77dcb5f03d71506d92bdcb28f89c642816b6bb0eef466b007466",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/height-for-age-%285-19-years%29/hfa-boys-z-who-2007-exp.xlsx?sfvrsn=7fa263d_2",
+      "standard": "WHO"
+    },
+    "who2007_height_for_age_girls": {
+      "csv_sha256": "48c75242a7391e541f98f0e41f6709b47e35d778aba9415df4256dbc23eeb822",
+      "lmsb_sha256": "dbd3c5c14e64940d82421495463149647ec9901c1a9cb3e0fce6315a1f9fb7c1",
+      "reference_version": "WHO 2007",
+      "rows": 168,
+      "source_sha256": "df07ee16d3d2916569f1d869b7c874d7b880a41321d871215ed0254cb16679b3",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/height-for-age-%285-19-years%29/hfa-girls-z-who-2007-exp.xlsx?sfvrsn=79d310ee_2",
+      "standard": "WHO"
+    },
+    "who2007_weight_for_age_boys": {
+      "csv_sha256": "d971f74acd6d5a121f3c2438017cc80bf177137a7dd9ce4991033ec6991e3519",
+      "lmsb_sha256": "a1163c802d0e92bd7153d3eff3c69539776774f71170da96f91248eef73300f1",
+      "reference_version": "WHO 2007",
+      "rows": 60,
+      "source_sha256": "a6ed0d9f3cfa209747afe49f7503b7cc24a1be6b6a8e7222e85a36b7850cb99f",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/weight-for-age-%285-10-years%29/hfa-boys-z-who-2007-exp_0ff9c43c-8cc0-4c23-9fc6-81290675e08b.xlsx?sfvrsn=b3ca0d6f_4",
+      "standard": "WHO"
+    },
+    "who2007_weight_for_age_girls": {
+      "csv_sha256": "e2f1ac12b1a9ed43255776e70c10bba518dda90836e6109aa1fa83256f44fa7a",
+      "lmsb_sha256": "1eebfdce2337ee92b42f1d8230bce07014fd54004a06003bcbc15b066b86bdbd",
+      "reference_version": "WHO 2007",
+      "rows": 60,
+      "source_sha256": "d747e068fcef4238cbaf1c201dd7788f266d9903685f4495360614eed0153562",
+      "source_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/weight-for-age-%285-10-years%29/hfa-girls-z-who-2007-exp_7ea58763-36a2-436d-bef0-7fcfbadd2820.xlsx?sfvrsn=6ede55a4_4",
+      "standard": "WHO"
+    }
+  }
+}

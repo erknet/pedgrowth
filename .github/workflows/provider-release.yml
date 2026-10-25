@@ -1,0 +1,117 @@
+name: Publish reviewed reference extension
+
+on:
+  workflow_dispatch:
+    inputs:
+      provider:
+        description: 'Independently reviewed extension to publish'
+        required: true
+        type: choice
+        options:
+          - who2006
+          - who2007
+          - cdc
+          - intergrowth
+
+concurrency:
+  group: pedgrowth-provider-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify source-specific redistribution and local-conversion approval
+        env:
+          PROVIDER: ${{ inputs.provider }}
+        run: |
+          python scripts/verify_reference_rights.py --enforce-publication --providers "$PROVIDER"
+      - run: python -m pip install build 'setuptools>=77' wheel
+      - name: Require the exact matching core release
+        id: version
+        run: |
+          VERSION=$(python -c "import tomllib; print(tomllib.load(open('packages/pedgrowth/pyproject.toml', 'rb'))['project']['version'])")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          python -m pip download --no-deps --only-binary=:all: -d /tmp/core-check "pedgrowth==$VERSION"
+      - name: Build only this independently cleared provider
+        env:
+          PROVIDER: ${{ inputs.provider }}
+        run: |
+          python scripts/build_distributions.py --mode publication --components "$PROVIDER" --output-dir dist
+      - name: Verify release artifact contains no unauthorized scientific data
+        env:
+          PROVIDER: ${{ inputs.provider }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from scripts.check_data_distributions import check_sdist, check_wheel
+          group = os.environ["PROVIDER"]
+          version = __import__("tomllib").loads(Path("packages/pedgrowth/pyproject.toml").read_text())["project"]["version"]
+          stem = "pedgrowth_data_" + group + "-" + version
+          wheel, = Path("dist").glob(stem + "-*.whl")
+          sdist, = Path("dist").glob(stem + ".tar.gz")
+          check_wheel(wheel, group)
+          check_sdist(sdist, group, version)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-provider-distribution
+          path: |
+            dist/*.whl
+            dist/*.tar.gz
+          if-no-files-found: error
+
+  publish:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: reviewed-provider-distribution
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
+          attestations: true
+
+  github-release:
+    needs: [build, publish]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: reviewed-provider-distribution
+          path: dist/
+      - name: Record reviewed provider release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROVIDER: ${{ inputs.provider }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          TAG="pedgrowth-data-$PROVIDER-v$VERSION"
+          gh release create "$TAG" dist/* --target "$GITHUB_SHA" --title "$TAG" --generate-notes
