@@ -1,0 +1,317 @@
+{
+  "audit_date": "2026-10-17",
+  "code_license": "MIT (independently authored Python engine only; optional scientific reference data excluded)",
+  "release_disclaimer": "No implication of WHO, CDC or INTERGROWTH endorsement or clinical certification",
+  "source_data": {
+    "cdc_bmi_for_age": {
+      "standard": "CDC",
+      "reference_version": "CDC 2022 Extended BMI-for-Age",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/extended-bmi/bmi-age-2022.csv",
+      "upstream_sha256": "7f416a213157a5209bb6cbfd1b19292510248f3f31fe43c9ff63f6d8e39f7890",
+      "normalized_sha256": "c3c59c42fc2b4e4f2886a7ca49a6844be662d8e135d5781717fef2fda2fd4052",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_bmi_for_age_2000": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/bmiagerev.csv",
+      "upstream_sha256": "cbeea0e8d500ee15c652f3fdc45bcd02cb9c15d4d1e86f4d8048bbfea8d166e5",
+      "normalized_sha256": "76ca2dd2ddbb661a32170e3816f69a9ccc05b92a58bc726599dbc339b25d3abf",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_head_circumference_for_age": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000 Growth Charts",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/hcageinf.csv",
+      "upstream_sha256": "bf7e2d7af8fdb336f0b159e480414842136da960ea6a730b7e73d1060b4549e9",
+      "normalized_sha256": "401f4093f2638cf56a2359a28b6033de6097acade0934885fbd8a9dc0997c276",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_height_for_age_24_240": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000 Growth Charts",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/statage.csv",
+      "upstream_sha256": "45130d2a9d7c50c54a47e7ba626b66c61d4554bc2d901198cedd9419a53f7251",
+      "normalized_sha256": "5a53c7384b0005f793276214d97ace6e4872ab869eb260d7c7dbe7f71a8e5274",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_length_for_age_0_36": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000 Growth Charts",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/lenageinf.csv",
+      "upstream_sha256": "a334b86bc0ecde80d12cdc172dde17b4390ca53ac372b26dd0d72d8502ac2687",
+      "normalized_sha256": "3669756c8593c014103959d9d4e484f711a69e1123ccc839762072489873f39a",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_weight_for_age_0_36": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000 Growth Charts",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/wtageinf.csv",
+      "upstream_sha256": "73221dd4de82eb9a70c1e6dd45c9b9e285fa1a3d7fff4971c3b85c1be6e5feed",
+      "normalized_sha256": "7682e11e5a26866a9304fdc3f92684a2b737a369ade7c9959e20913660397a9e",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_weight_for_age_24_240": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000 Growth Charts",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/wtage.csv",
+      "upstream_sha256": "3406c9d125bcb69c062a9e84eb8c0209bfe9346542bdc1d308643750dcc241b7",
+      "normalized_sha256": "4b13a40102b9f1968fba8960c24eec2094a69caf4d8367d4b20527467763f068",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_weight_for_height": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000 Growth Charts",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/wtstat.csv",
+      "upstream_sha256": "0f75b6ef7ac725c311bd3ff9d50c5b3b415b7faa00c99126b04f4f9a1c773db3",
+      "normalized_sha256": "024870324cda47177eef9282a40d5ea53aa514af06b6163f7b5cb491550f5eba",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "cdc_weight_for_length": {
+      "standard": "CDC",
+      "reference_version": "CDC 2000 Growth Charts",
+      "upstream_url": "https://www.cdc.gov/growthcharts/data/zscore/wtleninf.csv",
+      "upstream_sha256": "3dd616c8d11ad8ad5470929477609e6fc44cb2e5f7b95494061e1413a0034249",
+      "normalized_sha256": "e0b025dfce65f25b6100a74b2cea2e6795b88c23bf2e47d66ad7d69e0a15c1ea",
+      "redistribution_status": "cdc_public_domain_reuse_subject_to_attribution_exceptions",
+      "rights_basis_url": "https://www.cdc.gov/Other/imagereuse.html"
+    },
+    "who2007_bmi_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2007",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/bmi-for-age-%285-19-years%29/bmi-boys-z-who-2007-exp.xlsx?sfvrsn=a84bca93_2",
+      "upstream_sha256": "0a60849673f34a06b8e2fe4defe5d00348de687b6c9fce0278f1525fff89eb6d",
+      "normalized_sha256": "9b47d1b4d9c5e1223f3293e205caf9c6ba2bae9bed5350dfded28b3bf697ea87",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who2007_bmi_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2007",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/bmi-for-age-%285-19-years%29/bmi-girls-z-who-2007-exp.xlsx?sfvrsn=79222875_2",
+      "upstream_sha256": "66f5c6284b44579ad6135fc639f22c09e36fe5a695b04390377113f6a00deb72",
+      "normalized_sha256": "2fba3a380ef796c8be55c9c3c2bf7b8d86e7f22f58246dc242a1272e4db94684",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who2007_height_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2007",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/height-for-age-%285-19-years%29/hfa-boys-z-who-2007-exp.xlsx?sfvrsn=7fa263d_2",
+      "upstream_sha256": "d78fa8cafcab77dcb5f03d71506d92bdcb28f89c642816b6bb0eef466b007466",
+      "normalized_sha256": "d20df82ce25d4e8cdd6a1895eb2ea197f66f502b5dda860cce55f5686a33be45",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who2007_height_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2007",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/height-for-age-%285-19-years%29/hfa-girls-z-who-2007-exp.xlsx?sfvrsn=79d310ee_2",
+      "upstream_sha256": "df07ee16d3d2916569f1d869b7c874d7b880a41321d871215ed0254cb16679b3",
+      "normalized_sha256": "48c75242a7391e541f98f0e41f6709b47e35d778aba9415df4256dbc23eeb822",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who2007_weight_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2007",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/weight-for-age-%285-10-years%29/hfa-boys-z-who-2007-exp_0ff9c43c-8cc0-4c23-9fc6-81290675e08b.xlsx?sfvrsn=b3ca0d6f_4",
+      "upstream_sha256": "a6ed0d9f3cfa209747afe49f7503b7cc24a1be6b6a8e7222e85a36b7850cb99f",
+      "normalized_sha256": "d971f74acd6d5a121f3c2438017cc80bf177137a7dd9ce4991033ec6991e3519",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who2007_weight_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2007",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/growth-reference-5-19-years/weight-for-age-%285-10-years%29/hfa-girls-z-who-2007-exp_7ea58763-36a2-436d-bef0-7fcfbadd2820.xlsx?sfvrsn=6ede55a4_4",
+      "upstream_sha256": "d747e068fcef4238cbaf1c201dd7788f266d9903685f4495360614eed0153562",
+      "normalized_sha256": "e2f1ac12b1a9ed43255776e70c10bba518dda90836e6109aa1fa83256f44fa7a",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_bmi_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/body-mass-index-for-age/expanded-tables/bfa-boys-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "58dcb2abea0e04b1c4f8ad3511d05ec1bea03741f230ac127b93f929e4cc6fc8",
+      "normalized_sha256": "714e165caca35dd048ece729abc8ba78006f0352929143b9b280f158bfc723b8",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_bmi_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/body-mass-index-for-age/expanded-tables/bfa-girls-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "d3817262a383cdd02553b004f1c6110527d30b729c70501d032e71caadc17529",
+      "normalized_sha256": "62d994d408738ca1aecbe9245e7c2e2e64018b446437604cfa19f87657a66080",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_head_circumference_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/head-circumference-for-age/expanded-tables/hcfa-boys-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "89a657bc466e85f6c8f2e5e7f4635e969bdcf982bb71e519273e43896a1c3314",
+      "normalized_sha256": "6a4a9a35536d629e6065a2ca0f7c3d9d30d5d6efe3fc5dc46907f20e9412327e",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_head_circumference_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/head-circumference-for-age/expanded-tables/hcfa-girls-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "8eec3770d1027ce1b3b96a7b89fd1e77070558a7791b17b4462cda8a813324a3",
+      "normalized_sha256": "fd33a6fe4d205319199bc66f371b9b25d2477786ad1d910b6b7609bbb32c6242",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_length_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/length-height-for-age/expandable-tables/lhfa-boys-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "c4b1c9029ab9751a5f0888e32f35c7c0287a16d361885cf911ecf23b3f7f6b4f",
+      "normalized_sha256": "fbf60b1103a0c9907594768316abc5eb78c64855facae5fb37bc93fcdc29917d",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_length_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/length-height-for-age/expandable-tables/lhfa-girls-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "6aa2876319449a6b1f4d825848128902114ff53c67b92b86a0c5140846013059",
+      "normalized_sha256": "e194f3bf4f7480a85e50836f9f67fab3c6a649b7728821dfe8b221f81ee1a629",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_muac_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/arm-circumference-for-age/expanded-tables/acfa-boys-zscore-expanded-tables.xlsx?sfvrsn=76ed87fa_10",
+      "upstream_sha256": "20066947ff80fb5d7718dcae4ead71b4eb747c1d4fd871bdb3434b28dc6d303c",
+      "normalized_sha256": "8a98882cf964dd281d2ffd27f6f085133c5bf359afae9d1c6dec8c6db2d86d52",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_muac_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/arm-circumference-for-age/expanded-tables/acfa-girls-zscore-expanded-tables.xlsx?sfvrsn=31a482c5_8",
+      "upstream_sha256": "ebbfac8c73a017914c970e513bcb0534789c3ad97c5a71ab41a48c2b1b7bba5d",
+      "normalized_sha256": "540f6dbc385937ee50adcc166760352a1ced2658f09d1f59d0bd9cf57a467576",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_subscapular_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/subscapular-skinfold-for-age/expanded-tables/ssfa-boys-zscore-expanded-table.xlsx?sfvrsn=6fb55c03_10",
+      "upstream_sha256": "1237308bb76040467e4003ce46681351fbfe8a20e934ba36b59b8b7d44205ae6",
+      "normalized_sha256": "2df9d6ce4e27d839b17e1b87837a48b420ceb8d79f17082f0204c8c5b2f6f980",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_subscapular_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/subscapular-skinfold-for-age/expanded-tables/ssfa-girls-zscore-expanded-table.xlsx?sfvrsn=37715619_8",
+      "upstream_sha256": "042f5e16d9839f8cf93f7cf1a307860737a1f0149d24e6cf545042c224ef380d",
+      "normalized_sha256": "ad61301359070fa51e972e1beb0bbac32fa01c377ad087699bb57480b8564496",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_triceps_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/triceps-skinfold-for-age/expanded-tables/tsfa-boys-zscore-expanded-tables.xlsx?sfvrsn=48eb5de0_8",
+      "upstream_sha256": "1e0a1d410516338da4fbd5e21bf8b72a5a775ed789818341159b571ce5243db6",
+      "normalized_sha256": "d7fd122ccdd6a879b2992870e57fac6d1eae03eedb9aee51f93724ceabf4c285",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_triceps_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/triceps-skinfold-for-age/expanded-tables/tsfa-girls-zscore-expanded-tables.xlsx?sfvrsn=122fa0d5_8",
+      "upstream_sha256": "9effdedf93590d5404037cf62b4b280568592ce8502118c53d3fac8826033365",
+      "normalized_sha256": "a6a161c66a5a859b3c458bce1f24de470369b5c09d661197ad3ca4853b31f00d",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_weight_for_age_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-age/expanded-tables/wfa-boys-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "b5b4748c6bfa5230e2eddafa1767629c349178b08d457f400b59422b8bfef86c",
+      "normalized_sha256": "0f4ca54b5cb91a9131b7391a8d7f7cfd6081ba56216d3fe596ca268efaca9312",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_weight_for_age_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-age/expanded-tables/wfa-girls-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "ee3ae12cb96c6c5541cdf43665c03ce6c984f877859a183a5f6104eb06a49a6e",
+      "normalized_sha256": "6f8b2e4c1a9544ea3d40b67ad30577a65dadefcccad819e1d78af7473880b09a",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_weight_for_height_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfh-boys-zscore-expanded-tables.xlsx",
+      "upstream_sha256": "ed3b590f9c65937a138408b13618f33684bb6406a0c56d6a2ce3fd9053a3f59f",
+      "normalized_sha256": "d44c92e4514d8ca4855b8a31366bac255cb6fa76f9ff238347de6bdd9a427192",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_weight_for_height_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfh-girls-zscore-expanded-tables.xlsx?sfvrsn=daac732c_8",
+      "upstream_sha256": "fca340d5f04aa1556ac410b176b65b290e1b9ff467fc854a97f9b54ad94c9b8a",
+      "normalized_sha256": "3e8fb6e9e3cc2bdcdd4b9507345a44d048eb6b66a874decaf433853a56300928",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_weight_for_length_boys": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfl-boys-zscore-expanded-table.xlsx",
+      "upstream_sha256": "1a6e9a002d2692d038161bc6572a10f8b9fa0657163808141d2981a2132c59cc",
+      "normalized_sha256": "00afe82e6b6ef0ef71c717de2794085340f73d2a07bf000eba39d9e120c87f95",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    },
+    "who_weight_for_length_girls": {
+      "standard": "WHO",
+      "reference_version": "WHO 2006 Child Growth Standards",
+      "upstream_url": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfl-girls-zscore-expanded-table.xlsx",
+      "upstream_sha256": "ec116b8e618ad311d34a87231346badf16c75f5c4f82222ec846e05c582bf16a",
+      "normalized_sha256": "a560c85b6a0751da49c88880020be95ef781ac3c9e80e5c551e4fb3503555319",
+      "redistribution_status": "unresolved_for_unrestricted_public_redistribution",
+      "rights_basis_url": "https://www.who.int/about/policies/publishing/copyright"
+    }
+  },
+  "intergrowth_equations": {
+    "count": 7,
+    "implementation": "independently written Python from published regression equations",
+    "r_oracle": "Original ropensci/gigs v0.5.2 source used only by CI; no GPL R source bundled in the runtime",
+    "published_reference": "https://intergrowth21.tghn.org/standards-tools/",
+    "rights_source": "https://intergrowth21.tghn.org/standards-tools/",
+    "reuse_status": "use_free_per_official_site_but_derivative_redistribution_needs_review"
+  },
+  "assessment": {
+    "WHO": "24 coefficient datasets. WHO 2006/2007 older published tables may not carry the blanket CC license applied to recent WHO works. WHO website general data terms and publishing terms differ; no source-specific clearance established for unrestricted public redistribution.",
+    "CDC": "9 coefficient datasets; US federal public-domain presumption with official CDC attribution, no endorsement, and possible third-party/jurisdictional exceptions.",
+    "INTERGROWTH": "Published regression equations are implemented independently; the public site invites free use of charts and consultation for modifications. Status of redistributing derived coefficients and a PyPI product has not been independently confirmed."
+  }
+}

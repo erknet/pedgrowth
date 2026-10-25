@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "notice": "Rights belong to the original scientific reference providers. The MIT pedgrowth software license does not cover these separately obtained datasets. Installation requires source-specific rights compliance.",
+  "sources": {
+    "who2006": {
+      "provider": "World Health Organization",
+      "standard": "WHO Child Growth Standards 2006",
+      "license_expression": null,
+      "rights_status": "source_specific_review_required",
+      "terms_url": "https://www.who.int/about/policies/publishing/permissions",
+      "redistribution_in_mit_core": false,
+      "installed_by_default": false,
+      "expected_reference_count": 18,
+      "r_package": {
+        "name": "anthro",
+        "version": "1.1.0",
+        "declared_license": "GPL-3",
+        "spdx_license_expression": "GPL-3.0-only",
+        "package_url": "https://cran.r-project.org/package=anthro",
+        "source_code_url": "https://github.com/WorldHealthOrganization/anthro",
+        "package_source_archive_url": "https://cran.r-project.org/src/contrib/anthro_1.1.0.tar.gz",
+        "copyright_holder": "World Health Organization (as declared in R package DESCRIPTION)"
+      },
+      "official_reference_pages": [
+        {
+          "label": "WHO Child Growth Standards 2006: published standards and original LMS data",
+          "url": "https://www.who.int/tools/child-growth-standards/standards"
+        }
+      ],
+      "scientific_values_origin": "The values are derived from WHO Child Growth Standards 2006 official downloadable coefficient tables, normalized into age/sex-specific LMS CSVs and independently compiled into LMS binaries. The official WHO anthro R package embeds matching LMS values for its covered age domain: 28,228 LMS records match across WHO 2006/2007 combined, with no mismatches, but 420 WHO 2006 records in the pedgrowth source files fall outside the anthro package's reference age domain.",
+      "r_package_usage_and_packaging_basis": "WHO's own GPL-3 anthro R package provides an independent software/data reference: its embedded coefficient arrays were compared record-by-record, its implementation defines relevant methodological and clinical usage conventions, and its source distribution informed provenance and file attribution. The pedgrowth LMS packaging format and Python algorithms were independently implemented.",
+      "packaging_code_license_expression": "GPL-3.0-only",
+      "r_program_license_is_data_redistribution_grant": false,
+      "validation": {
+        "input_origin": "WHO 2006 official downloadable LMS tables, checked by source SHA-256 and normalized CSV SHA-256",
+        "independent_oracle": "WHO-authored anthro R 1.1.0 embedded LMS coefficients and independently computed R z-scores",
+        "generation_scripts": [
+          "scripts/refresh_data.py",
+          "scripts/export_who_r_oracles.R",
+          "scripts/export_who_r_challenges.R",
+          "scripts/export_who_r_positions.R",
+          "scripts/export_clinical_r_oracles.R"
+        ],
+        "fixture_paths": [
+          "tests/fixtures/who_r/",
+          "tests/fixtures/clinical_cases_manifest.json"
+        ],
+        "limitations": "WHO R has a shorter computational age domain than some WHO downloadable table rows; only independently covered values are considered numerically cross-validated."
+      },
+      "rights_evidence_sources": [
+        "https://cran.r-project.org/src/contrib/anthro_1.1.0.tar.gz",
+        "https://www.who.int/about/policies/publishing/permissions"
+      ],
+      "pending_clearance_details": "14 WHO reference tables include 30 additional days each outside anthro R. Website-specific authorization remains outstanding for 420 rows.",
+      "source_form_in_data_distribution": true
+    },
+    "who2007": {
+      "provider": "World Health Organization",
+      "standard": "WHO Growth Reference 2007",
+      "license_expression": null,
+      "rights_status": "source_specific_review_required",
+      "terms_url": "https://www.who.int/about/policies/publishing/permissions",
+      "redistribution_in_mit_core": false,
+      "installed_by_default": false,
+      "expected_reference_count": 6,
+      "r_package": {
+        "name": "anthroplus",
+        "version": "1.1.0",
+        "declared_license": "GPL (>= 3)",
+        "spdx_license_expression": "GPL-3.0-or-later",
+        "package_url": "https://cran.r-project.org/package=anthroplus",
+        "source_code_url": "https://github.com/WorldHealthOrganization/anthroplus",
+        "package_source_archive_url": "https://cran.r-project.org/src/contrib/anthroplus_1.1.0.tar.gz",
+        "copyright_holder": "World Health Organization (as declared in R package DESCRIPTION)"
+      },
+      "official_reference_pages": [
+        {
+          "label": "WHO Growth Reference 2007: growth reference data for ages 5–19 years",
+          "url": "https://www.who.int/tools/growth-reference-data-for-5to19-years"
+        }
+      ],
+      "scientific_values_origin": "The values are derived from WHO Growth Reference 2007 official downloadable coefficient tables. Independently normalized LMS values match the corresponding sex- and age-specific coefficients embedded in the official WHO anthroplus R package. The package's application of the growth reference and published underlying source metadata informed validation.",
+      "r_package_usage_and_packaging_basis": "WHO's GPL (>= 3) anthroplus package provides independent WHO 2007 coefficient cross-validation and usage conventions. Published tables were independently normalized and compiled into a versioned, digest-verified Python data distribution.",
+      "packaging_code_license_expression": "GPL-3.0-or-later",
+      "r_program_license_is_data_redistribution_grant": false,
+      "validation": {
+        "input_origin": "WHO 2007 official downloadable growth-reference spreadsheets, normalized into LMS coefficients with source hashes",
+        "independent_oracle": "WHO-authored anthroplus R 1.1.0 LMS tables and independent z-score output",
+        "generation_scripts": [
+          "scripts/refresh_data.py",
+          "scripts/export_who_r_oracles.R",
+          "scripts/export_who_r_challenges.R",
+          "scripts/export_clinical_r_oracles.R"
+        ],
+        "fixture_paths": [
+          "tests/fixtures/who_r/",
+          "tests/fixtures/clinical_cases_manifest.json"
+        ],
+        "limitations": "R comparisons are scientific validation, not a separate license grant for official WHO published downloads."
+      },
+      "rights_evidence_sources": [
+        "https://cran.r-project.org/src/contrib/anthroplus_1.1.0.tar.gz",
+        "https://www.who.int/about/policies/publishing/permissions"
+      ],
+      "pending_clearance_details": "All six tables match WHO-owned anthroplus R; verify that embedded data are granted under GPL and that transformation and source-form obligations are met.",
+      "source_form_in_data_distribution": true
+    },
+    "cdc": {
+      "provider": "US Centers for Disease Control and Prevention",
+      "standard": "CDC 2000 / 2022",
+      "license_expression": null,
+      "rights_status": "generally_us_federal_public_domain_subject_to_third_party_and_jurisdiction_exceptions",
+      "terms_url": "https://www.cdc.gov/Other/imagereuse.html",
+      "redistribution_in_mit_core": false,
+      "installed_by_default": false,
+      "expected_reference_count": 9,
+      "r_package": {
+        "name": "cdcanthro",
+        "version": "0.4.0",
+        "declared_license": "GPL-3",
+        "spdx_license_expression": "GPL-3.0-only",
+        "package_url": "https://cran.r-project.org/package=cdcanthro",
+        "source_code_url": "https://cran.r-project.org/src/contrib/cdcanthro_0.4.0.tar.gz",
+        "package_source_archive_url": "https://cran.r-project.org/src/contrib/cdcanthro_0.4.0.tar.gz",
+        "copyright_holder": "David Freedman and contributors (as declared in R package DESCRIPTION)"
+      },
+      "official_reference_pages": [
+        {
+          "label": "CDC 2000 Growth Charts: LMS data files",
+          "url": "https://www.cdc.gov/growthcharts/cdc-data-files.htm"
+        },
+        {
+          "label": "CDC 2022 Extended BMI-for-Age: LMS and sigma source data and equations",
+          "url": "https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm"
+        }
+      ],
+      "scientific_values_origin": "The values are derived from original CDC 2000 LMS downloads and the CDC 2022 extended BMI LMS/sigma file, with separately implemented CDC calculation methods. The cdcanthro R package provides a GPL-3 computation and some packaged reference data for independent comparison. The public CDC files, not the GPL R package, are the direct source of the packaged pedgrowth coefficients; no claim is made that the newer CDC 2022 extended BMI dataset comes from cdcanthro.",
+      "r_package_usage_and_packaging_basis": "The GPL-3 cdcanthro R package provides a separate reference implementation of CDC/WHO standardized metrics and related tables for independent numerical validation. CDC original downloads govern the exact packed LMS values, and the Python dataset conversion and packaging code is independently authored.",
+      "packaging_code_license_expression": "MIT",
+      "r_program_license_is_data_redistribution_grant": false,
+      "validation": {
+        "input_origin": "CDC 2000 published LMS datasets, CDC 2022 published extended-BMI LMS/sigma data and published percentiles",
+        "independent_oracle": "Official CDC published percentile tables plus cdcanthro R 0.4.0 computed extended-BMI challenges",
+        "generation_scripts": [
+          "scripts/refresh_data.py",
+          "scripts/fetch_published_percentiles.py",
+          "scripts/export_cdc_r_challenges.R",
+          "scripts/export_clinical_r_oracles.R"
+        ],
+        "fixture_paths": [
+          "tests/fixtures/official_percentiles/",
+          "tests/fixtures/clinical_cases_manifest.json"
+        ],
+        "limitations": "The 2022 extended-BMI data are sourced from CDC, not from the cdcanthro R distribution."
+      },
+      "rights_evidence_sources": [
+        "https://www.cdc.gov/other/agencymaterials.html",
+        "https://www.cdc.gov/growthcharts/cdc-data-files.htm",
+        "https://www.cdc.gov/growthcharts/extended-bmi-data-files.htm"
+      ],
+      "pending_clearance_details": "Original CDC authored public-domain data; verify no third-party rights and jurisdictional complications before public listing.",
+      "source_form_in_data_distribution": true
+    },
+    "intergrowth": {
+      "provider": "INTERGROWTH-21st Consortium",
+      "standard": "INTERGROWTH preterm and very preterm reference equations",
+      "license_expression": null,
+      "rights_status": "source_specific_review_required",
+      "terms_url": "https://intergrowth21.tghn.org/standards-tools/",
+      "redistribution_in_mit_core": false,
+      "installed_by_default": false,
+      "expected_reference_count": 1,
+      "r_package": {
+        "name": "gigs",
+        "version": "0.5.2",
+        "declared_license": "GPL (>= 3)",
+        "spdx_license_expression": "GPL-3.0-or-later",
+        "package_url": "https://github.com/ropensci/gigs/releases/tag/v0.5.2",
+        "source_code_url": "https://github.com/ropensci/gigs",
+        "package_source_archive_url": "https://github.com/ropensci/gigs/archive/refs/tags/v0.5.2.tar.gz",
+        "copyright_holder": "London School of Hygiene & Tropical Medicine (listed in R package DESCRIPTION)"
+      },
+      "official_reference_pages": [
+        {
+          "label": "INTERGROWTH-21st: original standards, charts, and calculators",
+          "url": "https://intergrowth21.tghn.org/standards-tools/"
+        },
+        {
+          "label": "Villar et al. 2015 postnatal growth standards for preterm infants",
+          "url": "https://doi.org/10.1016/S2214-109X(15)00163-1"
+        },
+        {
+          "label": "Villar et al. 2016 very preterm size-at-birth reference",
+          "url": "https://doi.org/10.1016/S0140-6736(16)00384-6"
+        }
+      ],
+      "scientific_values_origin": "The 43 fitted numerical parameters are transcribed from the published INTERGROWTH-21st regression equations as represented in the independently GPL-licensed gigs R 0.5.2 functions ig_png_mu_sigma and ig_vpns_mu_sigma. The gigs comments cite the 2015 and 2016 original studies and note that certain additional equations were supplied directly by Dr Eric Ohuma. The official INTERGROWTH standards page provides primary scientific context and charts; the independent Python implementation was numerically validated against the R functions.",
+      "r_package_usage_and_packaging_basis": "The GPL (>= 3) gigs R package contains the evaluated regression expressions used as a precise numerical source and validation oracle. The independent Python calculation model and separate versioned data packaging are informed by the original research articles, INTERGROWTH website, and gigs R implementation.",
+      "packaging_code_license_expression": "GPL-3.0-or-later",
+      "r_program_license_is_data_redistribution_grant": false,
+      "validation": {
+        "input_origin": "INTERGROWTH-21st original published regression equations and fitted parameters as reproduced in gigs R 0.5.2",
+        "independent_oracle": "Pinned original gigs R 0.5.2 functions and 4,970 continuous computed comparison values",
+        "generation_scripts": [
+          "scripts/export_intergrowth_gigs_r.R",
+          "scripts/prepare_intergrowth_r_challenges.py"
+        ],
+        "fixture_paths": [
+          "tests/fixtures/intergrowth/continuous_manifest.json",
+          "tests/fixtures/intergrowth/manifest.json"
+        ],
+        "limitations": "Only four preterm-postnatal and three very-preterm birth models are covered; other INTERGROWTH standards are not implemented."
+      },
+      "rights_evidence_sources": [
+        "https://github.com/ropensci/gigs/releases/tag/v0.5.2",
+        "https://intergrowth21.com/news/new-r-package-standardising-fetal-neonatal-and-child-growth-assessment",
+        "https://intergrowth21.tghn.org/terms/"
+      ],
+      "pending_clearance_details": "Gigs GPL code and consortium endorsement are documented but source-specific fitted parameter grant has not been verified.",
+      "source_form_in_data_distribution": true
+    }
+  }
+}

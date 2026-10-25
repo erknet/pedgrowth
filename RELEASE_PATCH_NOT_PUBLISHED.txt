@@ -1,0 +1,1 @@
+Code-only source snapshot based on remote erknet/pedgrowth main d29ab9231e2c5f9cdd46d204e64b80068b63b3b4 with minimal release-version module invocation fix. Not pushed or published. Original scientific data remain unbundled.

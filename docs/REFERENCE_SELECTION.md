@@ -1,0 +1,13 @@
+# Reference selection and scientific reproducibility
+
+Reference choice is a study/clinical policy, not an implicit global truth. By default the calculator selects WHO only. Specify `standard='cdc'`, `standard='who_then_cdc'`, or `standard='cdc_then_who'` explicitly for different precedence. The latter two modes are precedence rules, **not** automatically endorsed country-specific clinical algorithms. `interpolation='nearest'` is the historical default; linear interpolation is opt-in.
+
+The supported WHO-to-CDC age-transition plan is available after installing both `pedgrowth-data-cdc` and `pedgrowth-data-who2006`: `from pedgrowth.data.cdc import CdcClinicalPlan`, followed by `GrowthChartsCalculator(plan=CdcClinicalPlan())`. For U.S. clinical practice, CDC recommends WHO standards before 2 years and CDC charts from age 2, using 2022 CDC extended BMI-for-age for BMI above the 97th percentile. Do not assume `who_then_cdc` implements this complete age-and-BMI policy: it prioritizes WHO wherever WHO tables exist. Users must choose the reference deliberately, document transitions and verify high-BMI behavior against CDC methodology.
+
+Inspect `calculator.available_references()` for each enabled dataset's standard, reference version, URL, source hash, normalized data hash and snapshot date. `calculator.reference_for('wfa', 12, 'M')` identifies the reference selected for a specific index. Custom CSV datasets are identified by their SHA-256; metadata may be supplied in `TableDefinition(reference_version=..., standard_name=..., source_url=...)`. This describes reference selection only, not the full calculation parameters (e.g. interpolation and measurement-position adjustments), which must also be recorded for research reproducibility.
+
+## Extending to other references
+
+Additional families such as INTERGROWTH-21st or national references can be supplied via `TableDefinition` with validated LMS CSVs, when the indicator, coordinate system, sex partitions, and LMS statistical definition are compatible. The library separately supports two INTERGROWTH-21st preterm families through `IntergrowthCalculator` (see [INTERGROWTH.md](INTERGROWTH.md)); it does not yet implement all INTERGROWTH families or national references. Do not convert or extrapolate incompatible growth models into LMS tables. Each new family requires authoritative coefficient sources, licensing review, range/unit checks, and independent numerical validation before claiming support.
+
+Sources: https://www.cdc.gov/growth-chart-training/hcp/overview/recommended.html and https://www.who.int/news-room/questions-and-answers/item/child-growth-standards
