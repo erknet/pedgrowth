@@ -2,12 +2,17 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import random
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "tests/fixtures/intergrowth/continuous_inputs.csv"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument(
+    "output", nargs="?", type=Path, default=ROOT / "tests/fixtures/intergrowth/continuous_inputs.csv"
+)
+OUTPUT = parser.parse_args().output
 
 FAMILIES: tuple[tuple[str, str, float, float, float, float], ...] = (
     ("preterm_postnatal", "weight", 27, 64, 0.45, 10),

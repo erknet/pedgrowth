@@ -53,10 +53,18 @@ passing Bash syntax to PowerShell.
 
 When the *private research fixtures* are present, CI executes the full
 numerical test suite and cross-platform reproducibility probes.
-`.github/workflows/official-validation.yml` remains a dedicated,
-separately triggered R-based external-validation workflow for scientifically
-validated reference publications. Public code-only CI must not be
-mistaken for full validation of downloadable scientific providers.
+`.github/workflows/official-validation.yml` is a dedicated, separately
+triggered R-based external-validation workflow. It downloads and verifies
+the 24 WHO coefficient tables from the official checksum-pinned sources in
+a temporary CI directory and compares them with WHO's original R package
+tables. It also compares live WHO/CDC R z-scores and 4,970 reproducible
+INTERGROWTH cases against the unmodified, SHA-pinned gigs R implementation.
+The public artifact contains the *validation summary only*, not the downloaded
+scientific references or the numerical R outputs. Private frozen-oracle
+regression checks run only if their complete private fixture set is present;
+otherwise the workflow explicitly reports them as NOT RUN. Public code-only
+CI must not be mistaken for full clinical certification or completion of the
+private frozen-oracle suite.
 `python scripts/check_public_source.py --git-index` rejects protected
 scientific CSV, compiled LMSB, and older reference-derived test datasets
 that have inadvertently been staged for public Git publication. The same

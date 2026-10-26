@@ -26,9 +26,15 @@ if (!requireNamespace("anthro", quietly = TRUE) ||
     !requireNamespace("anthroplus", quietly = TRUE)) {
   stop("Requires the original WHO anthro and anthroplus R packages")
 }
-all_files <- sort(list.files("validation/source_data", pattern = "^who.*\\.csv$", full.names = TRUE))
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) > 1L) stop("Expected zero or one WHO source directory")
+# Private research checkouts use validation/source_data; public GitHub runners
+# regenerate checksum-pinned scientific files in a temporary .local directory.
+source_dir <- if (length(args) == 1L) args[[1L]] else "validation/source_data"
+all_files <- sort(list.files(source_dir, pattern = "^who.*\\.csv$", full.names = TRUE))
 if (length(all_files) != 24L) {
-  stop("Expected precisely the 24 WHO reference data tables")
+  stop(paste("Expected precisely the 24 WHO reference data tables in", source_dir,
+             "; found", length(all_files)))
 }
 
 results <- data.frame(

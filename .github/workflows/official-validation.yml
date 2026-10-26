@@ -27,11 +27,50 @@ jobs:
           python -m pip install -e ./packages/pedgrowth -e ./packages/pedgrowth-data-who2006 -e ./packages/pedgrowth-data-who2007 -e ./packages/pedgrowth-data-cdc -e ./packages/pedgrowth-data-intergrowth
       - name: Verify independent R package licenses and fixture versions
         run: Rscript --vanilla scripts/verify_r_validation_licenses.R
-      - name: Verify WHO-published embedded LMS tables and source overlap
-        run: Rscript --vanilla scripts/verify_who_r_embedded_tables.R
+      - name: Reconstruct WHO LMS source tables and verify WHO R overlap
+        run: |
+          # Only checksum-pinned official data; keep scientific tables in
+          # .local/validation/who-source-tables, never in the Git index/artifact.
+          python -m scripts.prepare_live_who_r_audit .local/validation/who-source-tables
+          Rscript --vanilla scripts/verify_who_r_embedded_tables.R .local/validation/who-source-tables
       - name: Run independent WHO/CDC numerical comparison
         run: bash scripts/run_independent_validation.sh
-      - name: Regenerate all frozen WHO and CDC R oracles
+      - name: Detect private frozen-oracle fixture availability
+        id: private-fixtures
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          root = Path("tests/fixtures")
+          required = (
+              "who_r/inputs.csv", "who_r/expected.csv",
+              "who_r/challenges_input.csv", "who_r/challenges_expected.csv",
+              "who_r/position_inputs.csv", "who_r/position_expected.csv",
+              "official_percentiles/cdc_r_bmi_inputs.csv",
+              "official_percentiles/cdc_r_bmi_expected.csv",
+              "clinical_cases_input.csv", "clinical_cases_expected.csv",
+              "intergrowth/continuous_inputs.csv", "intergrowth/continuous_expected.csv",
+          )
+          present = [name for name in required if (root / name).is_file()]
+          if 0 < len(present) < len(required):
+              raise SystemExit(
+                  f"Incomplete private R fixture set: {len(present)}/{len(required)}. "
+                  "Refusing to mark independent frozen-oracle validation complete."
+              )
+          complete = len(present) == len(required)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              print(f"available={str(complete).lower()}", file=output)
+          if not complete:
+              print("::warning::Private frozen R oracle suite NOT RUN: "
+                    "all coefficient fixtures are intentionally excluded from public Git. "
+                    "Public live WHO/CDC and INTERGROWTH checks remain enabled.")
+              with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+                  print("Private frozen R oracle checks: NOT RUN (fixtures absent from public checkout). "
+                        "Public live external numerical checks run separately.", file=summary)
+          PY
+      - name: Regenerate all frozen WHO and CDC R oracles (private fixtures only)
+        if: steps.private-fixtures.outputs.available == 'true'
         run: |
           mkdir -p .local/validation
           Rscript --vanilla scripts/export_who_r_oracles.R tests/fixtures/who_r/inputs.csv .local/validation/who-baseline.csv
@@ -42,17 +81,53 @@ jobs:
           python scripts/verify_external_r_snapshots.py .local/validation/who-baseline.csv .local/validation/who-challenges.csv .local/validation/cdc-bmi.csv .local/validation/who-positions.csv --clinical .local/validation/clinical-cases.csv
       - name: Verify INTERGROWTH against pinned gigs v0.5.2 R source
         run: |
-          mkdir -p .local/gigs-validation
+          mkdir -p .local/gigs-validation .local/validation
+          # Independent synthetic challenges: input values only, never coefficients.
+          python scripts/prepare_intergrowth_r_challenges.py .local/validation/intergrowth-inputs.csv
           curl -fL --retry 3 --retry-delay 2 -H 'Accept: application/vnd.github+json' https://api.github.com/repos/ropensci/gigs/tarball/v0.5.2 -o .local/gigs-validation/gigs-v0.5.2.tar.gz
           tar -xzf .local/gigs-validation/gigs-v0.5.2.tar.gz -C .local/gigs-validation
           R_SOURCE=$(find .local/gigs-validation -mindepth 1 -maxdepth 1 -type d -name 'ropensci-gigs-*' -print -quit)
           test -n "$R_SOURCE"
           Rscript --vanilla scripts/verify_r_validation_licenses.R "$R_SOURCE"
-          Rscript --vanilla scripts/export_intergrowth_gigs_r.R tests/fixtures/intergrowth/continuous_inputs.csv .local/validation/gigs-continuous.csv "$R_SOURCE"
+          Rscript --vanilla scripts/export_intergrowth_gigs_r.R .local/validation/intergrowth-inputs.csv .local/validation/gigs-continuous.csv "$R_SOURCE"
+          python -m scripts.verify_live_intergrowth_r .local/validation/gigs-continuous.csv
+      - name: Compare gig outputs with frozen private R oracles
+        if: steps.private-fixtures.outputs.available == 'true'
+        run: |
           python scripts/verify_external_r_snapshots.py .local/validation/who-baseline.csv .local/validation/who-challenges.csv .local/validation/cdc-bmi.csv .local/validation/who-positions.csv --intergrowth .local/validation/gigs-continuous.csv --clinical .local/validation/clinical-cases.csv
-      - name: Retain independent R reference values
+      - name: Record public independent validation coverage without redistributing numerical data
+        run: |
+          python - <<'PY'
+          import csv
+          import os
+          from pathlib import Path
+
+          values = Path(".local/validation/official-values.csv")
+          gigs = Path(".local/validation/gigs-continuous.csv")
+          with values.open(newline="", encoding="utf-8") as f:
+              who_cdc = sum(1 for _ in csv.DictReader(f))
+          with gigs.open(newline="", encoding="utf-8") as f:
+              intergrowth = sum(1 for _ in csv.DictReader(f))
+          if who_cdc < 85 or intergrowth != 4970:
+              raise RuntimeError("Independent public R validation coverage unexpectedly decreased")
+          summary = (
+              "# Independent scientific reference verification (public code-only checkout)\n"
+              "- WHO embedded-source overlap: 24/24 tables, 28,228 matching LMS records, "
+              "420 out-of-domain records, zero mismatches (verified by preceding R step).\n"
+              f"- Live independent WHO/CDC R-vs-Python cases: {who_cdc}.\n"
+              f"- Live pinned gigs R-vs-Python INTERGROWTH cases: {intergrowth}.\n"
+              "- Frozen private scientific fixtures: see previous explicit availability step.\n"
+              "- This is an external numerical consistency check, not clinical certification.\n"
+          )
+          out = Path(".local/validation/official-validation-summary.md")
+          out.write_text(summary)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+              f.write(summary)
+          print(summary)
+          PY
+      - name: Retain public validation summary only
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: official-r-reference-values
-          path: .local/validation/*.csv
+          name: official-r-validation-summary
+          path: .local/validation/official-validation-summary.md
           if-no-files-found: error

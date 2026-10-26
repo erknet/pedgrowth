@@ -72,7 +72,7 @@ Run the WHO/CDC scripts with R packages anthro, anthroplus and cdcanthro. For IN
     Rscript scripts/export_intergrowth_gigs_r.R tests/fixtures/intergrowth/continuous_inputs.csv /tmp/gigs-continuous.csv /path/to/pinned/gigs-v0.5.2-source
     python scripts/verify_external_r_snapshots.py /tmp/who-baseline.csv /tmp/who-challenges.csv /tmp/cdc-bmi.csv /tmp/who-positions.csv --intergrowth /tmp/gigs-continuous.csv
 
-The official-validation GitHub workflow now regenerates all these external values before a release can pass its independent-validation gate. Local numerical checks can be run with pytest; the archived R oracle fixtures allow offline Python tests without installing R.
+The commands above reproduce the archived **private-fixture** comparison suite; those input CSVs are deliberately absent from the public checkout. The public official-validation workflow separately reconstructs 24 WHO coefficient tables from pinned official sources in .local, verifies them against WHO R, compares live WHO/CDC numerical outputs, and regenerates 4,970 synthetic INTERGROWTH challenges against SHA-pinned gigs R source. Private frozen-oracle comparisons are explicitly reported as **NOT RUN** when the complete private fixture set is unavailable; their historical results must not be presented as newly revalidated. The workflow uploads only a numerical-data-free summary, not the downloaded source tables or the R-generated numerical results.
 
 ## Scientific corrections established by the external checks
 
